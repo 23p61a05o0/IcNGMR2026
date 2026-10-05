@@ -1,0 +1,347 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* =========================================================
+   3D UTILITIES
+========================================================= */
+
+@layer utilities {
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .perspective-800 {
+    perspective: 800px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+}
+
+
+/* =========================================================
+   EXISTING SHADOWS
+========================================================= */
+
+.shadow-3d-sky {
+  box-shadow:
+    0 14px 28px -6px rgba(14, 165, 233, 0.18),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.shadow-3d-indigo {
+  box-shadow:
+    0 14px 28px -6px rgba(99, 102, 241, 0.18),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.shadow-3d-hover {
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* =========================================================
+   SCROLL REVEAL - BASE
+========================================================= */
+
+.scroll-reveal {
+  --scroll-reveal-delay: 0ms;
+
+  opacity: 0;
+
+  transition-property:
+    opacity,
+    transform,
+    filter;
+
+  transition-duration:
+    700ms;
+
+  transition-timing-function:
+    cubic-bezier(0.22, 1, 0.36, 1);
+
+  transition-delay:
+    var(--scroll-reveal-delay);
+
+  will-change:
+    opacity,
+    transform;
+
+}
+
+
+/* =========================================================
+   DEFAULT ANIMATIONS
+========================================================= */
+
+.scroll-reveal-default.scroll-reveal-up {
+  transform: translate3d(0, 30px, 0);
+}
+
+.scroll-reveal-default.scroll-reveal-down {
+  transform: translate3d(0, -30px, 0);
+}
+
+.scroll-reveal-default.scroll-reveal-left {
+  transform: translate3d(-30px, 0, 0);
+}
+
+.scroll-reveal-default.scroll-reveal-right {
+  transform: translate3d(30px, 0, 0);
+}
+
+
+/* =========================================================
+   3D ANIMATIONS
+========================================================= */
+
+.scroll-reveal-3d {
+  filter: blur(1px);
+
+  transform-origin: center center;
+}
+
+.scroll-reveal-3d.scroll-reveal-up {
+  transform:
+    perspective(1000px) translate3d(0, 32px, 0) rotateX(3deg) scale(0.985);
+}
+
+.scroll-reveal-3d.scroll-reveal-down {
+  transform:
+    perspective(1000px) translate3d(0, -32px, 0) rotateX(-3deg) scale(0.985);
+}
+
+.scroll-reveal-3d.scroll-reveal-left {
+  transform:
+    perspective(1000px) translate3d(-32px, 0, 0) rotateY(-2deg) scale(0.99);
+}
+
+.scroll-reveal-3d.scroll-reveal-right {
+  transform:
+    perspective(1000px) translate3d(32px, 0, 0) rotateY(2deg) scale(0.99);
+}
+
+
+/* =========================================================
+   VISIBLE STATE
+========================================================= */
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+
+  transform:
+    translate3d(0, 0, 0) rotateX(0) rotateY(0) scale(1);
+
+  filter: blur(0);
+}
+
+
+/* =========================================================
+   IMAGE SCROLL MOTION
+========================================================= */
+
+.scroll-motion-image {
+  transform: scale(0.985);
+
+  opacity: 0.9;
+
+  transition:
+    transform 800ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 700ms ease;
+}
+
+.scroll-reveal.is-visible .scroll-motion-image {
+  transform: scale(1);
+
+  opacity: 1;
+}
+
+
+/* =========================================================
+   ICON SCROLL MOTION
+========================================================= */
+
+.scroll-motion-icon {
+  transform: scale(0.9);
+
+  opacity: 0.8;
+
+  transition:
+    transform 600ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 600ms ease;
+}
+
+.scroll-reveal.is-visible .scroll-motion-icon {
+  transform: scale(1);
+
+  opacity: 1;
+}
+
+
+/* =========================================================
+   POP MOTION
+========================================================= */
+
+.scroll-motion-pop {
+  opacity: 0;
+
+  transform:
+    translateY(8px) scale(0.97);
+
+  transition:
+    opacity 600ms ease,
+    transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.scroll-reveal.is-visible .scroll-motion-pop {
+  opacity: 1;
+
+  transform:
+    translateY(0) scale(1);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+/*
+   IMPORTANT:
+
+   Mobile DOES NOT use horizontal movement.
+
+   Every direction becomes a small vertical reveal.
+*/
+
+@media (max-width: 767px) {
+
+  .scroll-reveal {
+    transition-duration: 650ms;
+  }
+
+
+  /* Default */
+
+  .scroll-reveal-default.scroll-reveal-up,
+  .scroll-reveal-default.scroll-reveal-down,
+  .scroll-reveal-default.scroll-reveal-left,
+  .scroll-reveal-default.scroll-reveal-right {
+    transform:
+      translate3d(0, 26px, 0);
+  }
+
+
+  /* 3D */
+
+  .scroll-reveal-3d.scroll-reveal-up,
+  .scroll-reveal-3d.scroll-reveal-down,
+  .scroll-reveal-3d.scroll-reveal-left,
+  .scroll-reveal-3d.scroll-reveal-right {
+    transform:
+      translate3d(0, 28px, 0) scale(0.985);
+
+    filter: blur(1px);
+  }
+
+
+  /* Visible */
+
+  .scroll-reveal.is-visible {
+    opacity: 1;
+
+    transform:
+      translate3d(0, 0, 0) scale(1);
+
+    filter: blur(0);
+  }
+
+
+  /* Images */
+
+  .scroll-motion-image {
+    transform: scale(0.98);
+  }
+
+  .scroll-reveal.is-visible .scroll-motion-image {
+    transform: scale(1);
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .scroll-reveal-default.scroll-reveal-up,
+  .scroll-reveal-default.scroll-reveal-down,
+  .scroll-reveal-default.scroll-reveal-left,
+  .scroll-reveal-default.scroll-reveal-right {
+    transform:
+      translate3d(0, 20px, 0);
+  }
+
+  .scroll-reveal-3d.scroll-reveal-up,
+  .scroll-reveal-3d.scroll-reveal-down,
+  .scroll-reveal-3d.scroll-reveal-left,
+  .scroll-reveal-3d.scroll-reveal-right {
+    transform:
+      translate3d(0, 22px, 0) scale(0.99);
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .scroll-reveal,
+  .scroll-motion-image,
+  .scroll-motion-icon,
+  .scroll-motion-pop {
+    opacity: 1;
+
+    transform: none;
+
+    filter: none;
+
+    transition: none;
+  }
+
+}
