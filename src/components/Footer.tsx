@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
 
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 border-b border-white/10 pb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10 mb-12 border-b border-white/10 pb-12">
 
           {/* =====================================================
               Column 1: Branding
@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
           <ScrollReveal
             variant="3d"
             direction="up"
-            className="space-y-4"
+            className="space-y-4 lg:col-span-1"
           >
             <h2 className="text-2xl font-black tracking-tight">
               Ic<span className="text-sky-400">NGMR</span> 2026
@@ -265,6 +265,82 @@ const Footer: React.FC = () => {
             </a>
           </ScrollReveal>
 
+          {/* =====================================================
+              Column 4: Publication Partner
+          ====================================================== */}
+          <ScrollReveal
+            variant="3d"
+            direction="up"
+            delay={300}
+            className="space-y-4"
+          >
+            <h3 className="text-lg font-bold">
+              Publication Partner
+            </h3>
+
+            <img
+              src="itm.png"
+              alt="Publication Partner"
+              className="
+                h-16 
+                w-auto 
+                object-contain 
+                bg-white/90 
+                rounded-lg 
+                p-2 
+                hover:bg-white 
+                transition-colors 
+                duration-300
+              "
+            />
+          </ScrollReveal>
+
+          {/* =====================================================
+              Column 5: Indexing Partner
+          ====================================================== */}
+          <ScrollReveal
+            variant="3d"
+            direction="up"
+            delay={400}
+            className="space-y-4"
+          >
+            <h3 className="text-lg font-bold">
+              Indexing Partner
+            </h3>
+
+            {/* Kept Scopus commented out as in original, just removed its wrapper if you uncomment it later */}
+            {/* <img
+              src="scopus.png"
+              alt="Indexing Partner 1"
+              className="
+                h-16 
+                w-auto 
+                object-contain 
+                bg-white/90 
+                rounded-lg 
+                p-2 
+                hover:bg-white 
+                transition-colors 
+                duration-300
+              "
+            /> */}
+            <img
+              src="clarivate.png"
+              alt="Indexing Partner 2"
+              className="
+                h-16 
+                w-auto 
+                object-contain 
+                bg-white/90 
+                rounded-lg 
+                p-2 
+                hover:bg-white 
+                transition-colors 
+                duration-300
+              "
+            />
+          </ScrollReveal>
+
         </div>
 
 
@@ -274,7 +350,7 @@ const Footer: React.FC = () => {
         <ScrollReveal
           variant="default"
           direction="up"
-          delay={300}
+          delay={500}
         >
           <div
             className="

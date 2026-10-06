@@ -416,6 +416,12 @@ const Navbar: React.FC = () => {
             `}
           >
             <img
+              src="/aicte.png"
+              alt="aicte"
+              className="h-10 sm:h-14 w-auto"
+            />
+
+            <img
               src="/NBA.png"
               alt="NBA"
               className="h-12 sm:h-16 w-auto"
@@ -426,6 +432,19 @@ const Navbar: React.FC = () => {
               alt="NAAC"
               className="h-10 sm:h-14 w-auto"
             />
+
+            <img
+              src="/ugc.png"
+              alt="ugc"
+              className="h-10 sm:h-14 w-auto"
+            />
+
+            <img
+              src="/JNTUH.png"
+              alt="JNTUH"
+              className="h-10 sm:h-14 w-auto"
+            />
+
           </div>
 
         </div>

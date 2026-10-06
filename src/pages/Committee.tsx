@@ -23,6 +23,14 @@ const conferenceChair: Member[] = [
   { name: 'Dr. Dara Raju', title: 'Head of The Department, Dept. of C.S.E.' + AFFILIATION },
 ];
 
+const CoConvenor: Member[] = [
+
+  { name: 'Dr. M. Venkateswara Rao', title: 'Professor, Dept. of C.S.E.' + AFFILIATION },
+  { name: 'Dr. G. Arun', title: 'Associate Professor, Dept. of C.S.E.' + AFFILIATION },
+  { name: 'Dr. B. Naresh Kumar', title: 'Associate Professor, Dept. of C.S.E.' + AFFILIATION },
+
+];
+
 const internationalAdvisory: Member[] = [
   {
     name: "Satya Aditya Akundi",
@@ -57,12 +65,16 @@ const nationalAdvisory: Member[] = [
 ];
 
 const organizingCommittee: Member[] = [
-  { name: 'Dr. G. Arun', title: 'Associate Professor, Dept. of C.S.E.' + AFFILIATION },
+  { name: 'Dr. A.L. Srinivasulu', title: 'Professor, Dept. of C.S.E.' + AFFILIATION },
+  { name: 'Dr. N. Swapna', title: 'Associate Professor, Dept. of C.S.E.' + AFFILIATION },
   { name: 'Dr. P. Yamini Devi', title: 'Associate Professor, Dept. of C.S.E.' + AFFILIATION },
+  { name: 'Dr. M. Kalpana', title: 'Associate Professor, Dept. of C.S.E.' + AFFILIATION },
+  { name: 'Dr. P. Subhadra', title: 'Associate Professor, Dept. of C.S.E.' + AFFILIATION }
 ];
 
 const steeringCommittee: Member[] = [
-  { name: 'Dr. M. Venkateswara Rao', title: 'Professor, Dept. of C.S.E.' + AFFILIATION },
+
+  { name: 'Dr. N. Srinivas', title: 'Associate Professor, Dept. of C.S.E.' + AFFILIATION },
   { name: 'Dr. S. Pothalaiah', title: 'Dean, Academic & Planning, Professor, E.C.E.' + AFFILIATION },
   { name: 'Dr. Sundeep Siddula', title: 'Associate Dean, R&D, Dept. of EEE' + AFFILIATION },
   { name: 'Dr. N. Sathyanarayan', title: 'Rtd. Senior Scientist, BARC, Professor of Physics' + AFFILIATION },
@@ -80,10 +92,10 @@ const steeringCommittee: Member[] = [
   { name: 'Dr. P. Kalyani', title: 'HoD – FME' + AFFILIATION },
 ];
 
-const technicalProgrammeCommittee: Member[] = [
-  { name: 'Dr. N. Swapna', title: 'Associate Professor, Dept. of C.S.E.' + AFFILIATION },
-  { name: 'Mr. V. Sathish', title: 'Assistant Professor, Dept. of C.S.E.' + AFFILIATION },
-];
+// const technicalProgrammeCommittee: Member[] = [
+//   { name: 'Dr. N. Swapna', title: 'Associate Professor, Dept. of C.S.E.' + AFFILIATION },
+//   { name: 'Mr. V. Sathish', title: 'Assistant Professor, Dept. of C.S.E.' + AFFILIATION },
+// ];
 
 const publicationCommittee: Member[] = [
   { name: 'Dr. P. Subhadra', title: 'Associate Professor, Dept. of C.S.E.' + AFFILIATION },
@@ -93,7 +105,7 @@ const publicationCommittee: Member[] = [
 ];
 
 const registrationCommittee: Member[] = [
-  { name: 'Dr. N. Srinivas', title: 'Associate Professor, Dept. of C.S.E.' + AFFILIATION },
+
   { name: 'Ms. P. Suvarnapushpa', title: 'Assistant Professor, Dept. of C.S.E.' + AFFILIATION },
   { name: 'Ms. K. Priyabhashini', title: 'Assistant Professor, Dept. of C.S.E.' + AFFILIATION },
   { name: 'Ms. A. Sandhyarani', title: 'Assistant Professor, Dept. of C.S.E.' + AFFILIATION },
@@ -102,12 +114,11 @@ const registrationCommittee: Member[] = [
   { name: 'Ms. A.P. Chaitanyasri Mouli', title: 'Professor, Dept. of C.S.E.' + AFFILIATION },
 ];
 
-const publicityCommittee: Member[] = [
-  { name: 'Dr. A. L. Srinivasulu', title: 'Associate Professor, Dept. of C.S.E.' + AFFILIATION },
-  { name: 'Mr. P. Hanumantha Rao', title: 'Assistant Professor, Dept. of C.S.E.' + AFFILIATION },
-  { name: 'Ms. J. Kumari', title: 'Assistant Professor, Dept. of C.S.E.' + AFFILIATION },
-  { name: 'Ms. U. Kavya', title: 'Assistant Professor, Dept. of C.S.E.' + AFFILIATION },
-];
+// const publicityCommittee: Member[] = [
+//   { name: 'Mr. P. Hanumantha Rao', title: 'Assistant Professor, Dept. of C.S.E.' + AFFILIATION },
+//   { name: 'Ms. J. Kumari', title: 'Assistant Professor, Dept. of C.S.E.' + AFFILIATION },
+//   { name: 'Ms. U. Kavya', title: 'Assistant Professor, Dept. of C.S.E.' + AFFILIATION },
+// ];
 
 const hospitalityCommittee: Member[] = [
   { name: 'Dr. S. Ramesh', title: 'Assistant Professor, Dept. of C.S.E.' + AFFILIATION },
@@ -160,15 +171,16 @@ const Committee = () => (
 
       <CommitteeSection title="Chief Patrons" members={chiefPatrons} icon={<ShieldCheck className="h-4 w-4 sm:h-5 sm:w-5" />} />
       <CommitteeSection title="Patrons" members={patrons} icon={<Star className="h-4 w-4 sm:h-5 sm:w-5" />} />
-      <CommitteeSection title="Conference Chair" members={conferenceChair} icon={<User className="h-4 w-4 sm:h-5 sm:w-5" />} />
+      <CommitteeSection title="Convenor" members={conferenceChair} icon={<User className="h-4 w-4 sm:h-5 sm:w-5" />} />
+      <CommitteeSection title="Co-Convenor" members={CoConvenor} icon={<ShieldCheck className="h-4 w-4 sm:h-5 sm:w-5" />} />
       <CommitteeSection title="International Advisory Committee" members={internationalAdvisory} icon={<Globe className="h-4 w-4 sm:h-5 sm:w-5" />} />
       <CommitteeSection title="National Advisory Committee" members={nationalAdvisory} icon={<Award className="h-4 w-4 sm:h-5 sm:w-5" />} />
       <CommitteeSection title="Organizing Committee" members={organizingCommittee} icon={<Users className="h-4 w-4 sm:h-5 sm:w-5" />} />
       <CommitteeSection title="Steering Committee" members={steeringCommittee} icon={<ShieldCheck className="h-4 w-4 sm:h-5 sm:w-5" />} />
       <CommitteeSection title="Publication Committee" members={publicationCommittee} icon={<ClipboardCheck className="h-4 w-4 sm:h-5 sm:w-5" />} />
       <CommitteeSection title="Registration Committee" members={registrationCommittee} icon={<ClipboardCheck className="h-4 w-4 sm:h-5 sm:w-5" />} />
-      <CommitteeSection title="Technical Programme Committee" members={technicalProgrammeCommittee} icon={<Mic2 className="h-4 w-4 sm:h-5 sm:w-5" />} />
-      <CommitteeSection title="Publicity Committee" members={publicityCommittee} icon={<Users className="h-4 w-4 sm:h-5 sm:w-5" />} />
+      {/* <CommitteeSection title="Technical Programme Committee" members={technicalProgrammeCommittee} icon={<Mic2 className="h-4 w-4 sm:h-5 sm:w-5" />} />
+      <CommitteeSection title="Publicity Committee" members={publicityCommittee} icon={<Users className="h-4 w-4 sm:h-5 sm:w-5" />} /> */}
       <CommitteeSection title="Hospitality Committee" members={hospitalityCommittee} icon={<Coffee className="h-4 w-4 sm:h-5 sm:w-5" />} />
     </div>
   </div>
