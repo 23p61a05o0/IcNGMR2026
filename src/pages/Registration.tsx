@@ -104,13 +104,13 @@ const Registration: React.FC = () => {
                   <tbody className="divide-y divide-slate-100">
                     <tr className="hover:bg-sky-50/60 transition-colors">
                       <td className="px-4 sm:px-6 py-3.5 sm:py-5 font-medium text-slate-700">Industry</td>
-                      <td className="px-4 sm:px-6 py-3.5 sm:py-5 font-black text-slate-900">₹13,000</td>
+                      <td className="px-4 sm:px-6 py-3.5 sm:py-5 font-black text-slate-900">₹11,000</td>
                       <td className="px-4 sm:px-6 py-3.5 sm:py-5 font-black text-slate-900">USD 150</td>
                     </tr>
                     <tr className="hover:bg-sky-50/60 transition-colors">
                       <td className="px-4 sm:px-6 py-3.5 sm:py-5 font-medium text-slate-700">Academicians</td>
-                      <td className="px-4 sm:px-6 py-3.5 sm:py-5 font-black text-slate-900">₹12,000</td>
-                      <td className="px-4 sm:px-6 py-3.5 sm:py-5 font-black text-slate-900">USD 150</td>
+                      <td className="px-4 sm:px-6 py-3.5 sm:py-5 font-black text-slate-900">₹10,000</td>
+                      <td className="px-4 sm:px-6 py-3.5 sm:py-5 font-black text-slate-900">USD 110</td>
                     </tr>
                   </tbody>
                 </table>

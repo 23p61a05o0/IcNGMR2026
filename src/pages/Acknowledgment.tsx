@@ -79,7 +79,7 @@ const Acknowledgment: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 items-center">
               <div className="relative overflow-hidden rounded-xl sm:rounded-2xl shadow-md">
                 <img
-                  src="/main.JPG"
+                  src="/night.jpg"
                   alt="Host Institute"
                   className="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-700"
                 />
@@ -97,8 +97,31 @@ const Acknowledgment: React.FC = () => {
                   We acknowledge the support of VBIT. Their world-class infrastructure and commitment to academic excellence provide the perfect backdrop for this dialogue.
                 </p>
                 <div className="pt-2 flex items-center space-x-4 sm:space-x-6">
-                  <img src="/NBA.png" alt="NBA" className="h-8 sm:h-10 w-auto group-hover:scale-105 transition-transform" />
-                  <img src="/NAAC.jpeg" alt="NAAC" className="h-7 sm:h-8 w-auto group-hover:scale-105 transition-transform" />
+                  <img
+                    src="/aicte.png"
+                    alt="aicte"
+                    className="h-7 sm:h-8 w-auto group-hover:scale-105 transition-transform"
+                  />
+                  <img
+                    src="/NBA.png"
+                    alt="NBA"
+                    className="h-8 sm:h-10 w-auto group-hover:scale-105 transition-transform"
+                  />
+                  <img
+                    src="/NAAC.jpeg"
+                    alt="NAAC"
+                    className="h-7 sm:h-8 w-auto group-hover:scale-105 transition-transform"
+                  />
+                  <img
+                    src="/ugc.png"
+                    alt="ugc"
+                    className="h-7 sm:h-8 w-auto group-hover:scale-105 transition-transform"
+                  />
+                  <img
+                    src="/JNTUH.png"
+                    alt="JNTUH"
+                    className="h-7 sm:h-8 w-auto group-hover:scale-105 transition-transform"
+                  />
                 </div>
               </div>
             </div>
