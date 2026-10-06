@@ -1,5 +1,15 @@
 import React, { useState } from 'react';
-import { MapPin, Mail, Send, Trophy, GraduationCap, Calendar, ArrowRight, UserCheck, ChevronDown } from 'lucide-react';
+import {
+    MapPin,
+    Mail,
+    Send,
+    Trophy,
+    GraduationCap,
+    Calendar,
+    UserCheck,
+    ChevronDown,
+    Award
+} from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
 
 const ContactAndAwards: React.FC = () => {
@@ -25,22 +35,28 @@ const ContactAndAwards: React.FC = () => {
 
     const awardCategories = [
         {
-            id: 'young-researcher',
-            title: 'Young Researcher Award',
-            description: 'Recognizing outstanding early-career scholars for their innovative contributions and future potential in their respective fields.',
-            icon: <GraduationCap className="h-7 w-7 sm:h-8 sm:w-8 text-sky-600" />,
+            id: 'best-researcher',
+            title: 'Best Researcher Award',
+            description: 'Recognizing outstanding scholars for their exceptional contributions, innovative research, and significant impact in their respective fields.',
+            icon: <Award className="h-7 w-7 sm:h-8 sm:w-8 text-sky-600" />,
             theme: 'from-sky-500/10 to-sky-600/5',
-            accentColor: 'text-sky-600',
-            btnColor: 'bg-sky-600 hover:bg-sky-700'
+            accentColor: 'text-sky-600'
         },
         {
-            id: 'women-researcher',
-            title: 'Women Researcher in Science and Technology',
-            description: 'Honoring exceptional women researchers whose work has significantly advanced scientific knowledge and technological innovation.',
+            id: 'best-women-researcher',
+            title: 'Best Women Researcher Award',
+            description: 'Honoring exceptional women researchers whose dedication and work have significantly advanced scientific knowledge and innovation.',
             icon: <UserCheck className="h-7 w-7 sm:h-8 sm:w-8 text-indigo-600" />,
             theme: 'from-indigo-500/10 to-indigo-600/5',
-            accentColor: 'text-indigo-600',
-            btnColor: 'bg-indigo-600 hover:bg-indigo-700'
+            accentColor: 'text-indigo-600'
+        },
+        {
+            id: 'best-teacher',
+            title: 'Best Teacher Award',
+            description: 'Celebrating outstanding educators for their excellence in teaching, dedicated mentorship, and inspiring the next generation.',
+            icon: <GraduationCap className="h-7 w-7 sm:h-8 sm:w-8 text-emerald-600" />,
+            theme: 'from-emerald-500/10 to-emerald-600/5',
+            accentColor: 'text-emerald-600'
         }
     ];
 
@@ -89,7 +105,7 @@ const ContactAndAwards: React.FC = () => {
                     </ScrollReveal>
 
                     {/* Categories Section */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-10 sm:mb-16">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-10 sm:mb-16">
                         {awardCategories.map((category, index) => (
                             <ScrollReveal
                                 key={category.id}
@@ -99,25 +115,17 @@ const ContactAndAwards: React.FC = () => {
                                 className="h-full"
                             >
                                 <div
-                                    className="group relative bg-white rounded-2xl sm:rounded-[2rem] border border-slate-100 p-6 sm:p-8 shadow-md sm:shadow-lg shadow-slate-200/30 md:hover:-translate-y-2.5 md:hover:shadow-2xl md:hover:shadow-sky-500/25 md:hover:border-sky-300 md:hover:scale-[1.01] transition-all duration-500 h-full flex flex-col justify-between cursor-default sm:cursor-pointer"
+                                    className="group relative bg-white rounded-2xl sm:rounded-[2rem] border border-slate-100 p-6 sm:p-8 shadow-md sm:shadow-lg shadow-slate-200/30 md:hover:-translate-y-2.5 md:hover:shadow-2xl md:hover:shadow-sky-500/25 md:hover:border-sky-300 md:hover:scale-[1.01] transition-all duration-500 h-full flex flex-col justify-start cursor-default"
                                 >
-                                    <div>
-                                        <div className={`p-3.5 sm:p-4 rounded-xl bg-gradient-to-br ${category.theme} w-fit mb-4 sm:mb-6 shadow-sm group-hover:scale-115 group-hover:rotate-6 transition-all duration-500`}>
-                                            {category.icon}
-                                        </div>
-                                        <h3 className="text-lg sm:text-xl font-black text-slate-900 mb-2 sm:mb-3 group-hover:text-sky-600 transition-colors duration-300">
-                                            {category.title}
-                                        </h3>
-                                        <p className="text-slate-500 text-xs sm:text-sm font-medium leading-relaxed mb-6 sm:mb-8">
-                                            {category.description}
-                                        </p>
+                                    <div className={`p-3.5 sm:p-4 rounded-xl bg-gradient-to-br ${category.theme} w-fit mb-4 sm:mb-6 shadow-sm group-hover:scale-115 group-hover:rotate-6 transition-all duration-500`}>
+                                        {category.icon}
                                     </div>
-                                    <button
-                                        className={`flex items-center space-x-2 px-5 sm:px-6 py-2.5 sm:py-3 ${category.btnColor} text-white rounded-xl font-bold shadow-md md:hover:scale-105 active:scale-95 transition-all text-xs sm:text-sm w-fit`}
-                                    >
-                                        <span>Apply Now</span>
-                                        <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4 group-hover:translate-x-1 transition-transform" />
-                                    </button>
+                                    <h3 className="text-lg sm:text-xl font-black text-slate-900 mb-2 sm:mb-3 group-hover:text-sky-600 transition-colors duration-300">
+                                        {category.title}
+                                    </h3>
+                                    <p className="text-slate-500 text-xs sm:text-sm font-medium leading-relaxed">
+                                        {category.description}
+                                    </p>
                                 </div>
                             </ScrollReveal>
                         ))}
@@ -130,14 +138,14 @@ const ContactAndAwards: React.FC = () => {
                                 <div className="max-w-md text-center lg:text-left">
                                     <h2 className="text-xl sm:text-2xl md:text-3xl font-black mb-3 sm:mb-4">How to Apply?</h2>
                                     <p className="text-slate-400 text-xs sm:text-sm mb-6 sm:mb-8 font-medium leading-relaxed">
-                                        Submit your application form before the deadline of 10th November, 2026.
+                                        Submit your application form before the deadline .
                                     </p>
                                     <div className="space-y-4">
                                         <div className="flex items-center justify-center lg:justify-start space-x-3 sm:space-x-4">
                                             <div className="p-2 bg-white/10 rounded-lg"><Calendar className="h-4 w-4 sm:h-5 sm:w-5 text-sky-400" /></div>
                                             <div className="text-left">
                                                 <p className="text-slate-500 text-[10px] font-black uppercase tracking-widest">Deadline</p>
-                                                <p className="text-sm sm:text-base font-bold">10th November, 2026</p>
+                                                <p className="text-sm sm:text-base font-bold">15th November, 2026</p>
                                             </div>
                                         </div>
                                         <div className="flex items-center justify-center lg:justify-start space-x-3 sm:space-x-4">

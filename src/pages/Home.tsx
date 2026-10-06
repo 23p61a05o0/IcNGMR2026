@@ -800,7 +800,7 @@ const Home: React.FC = () => {
                     sm:text-base
                   "
                 >
-                  28 - 29 November 2026
+                  28 - 29 December 2026
                 </p>
 
               </div>
