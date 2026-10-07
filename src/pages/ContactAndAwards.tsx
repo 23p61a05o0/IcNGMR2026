@@ -52,8 +52,8 @@ const ContactAndAwards: React.FC = () => {
         },
         {
             id: 'best-teacher',
-            title: 'Best Teacher Award',
-            description: 'Celebrating outstanding educators for their excellence in teaching, dedicated mentorship, and inspiring the next generation.',
+            title: 'Best Young Researcher Award',
+            description: 'Recognizing outstanding early-career scholars for their innovative contributions and future potential in their respective fields.',
             icon: <GraduationCap className="h-7 w-7 sm:h-8 sm:w-8 text-emerald-600" />,
             theme: 'from-emerald-500/10 to-emerald-600/5',
             accentColor: 'text-emerald-600'
