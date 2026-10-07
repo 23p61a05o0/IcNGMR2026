@@ -19,6 +19,11 @@ const Acknowledgment: React.FC = () => {
           <p className="text-sm sm:text-base md:text-lg text-slate-500 max-w-3xl mx-auto font-medium leading-relaxed">
             Heartfelt gratitude to the visionaries and partners who make ICNGMR 2026 a reality.
           </p>
+          <p>
+            "The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support."
+
+          </p>
+
         </ScrollReveal>
 
         {/* Main Gratitude Card */}
