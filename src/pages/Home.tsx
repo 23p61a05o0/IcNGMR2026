@@ -164,20 +164,27 @@ const Home: React.FC = () => {
               </div>
 
 
-              <h1
-                className="
-                  text-4xl
-                  sm:text-5xl
-                  md:text-6xl
-                  lg:text-7xl
-                  font-black
-                  text-slate-900
-                  mb-4
-                  tracking-tighter
-                "
-              >
-                Ic<span className="text-sky-500">NGMR</span>
-              </h1>
+              {/* Logo and Main Heading */}
+              <div className="flex items-center justify-center lg:justify-start space-x-4 sm:space-x-5 mb-4">
+                <img
+                  src="/icngmr.png"
+                  alt="ICNGMR Logo"
+                  className="h-12 sm:h-16 md:h-20 lg:h-24 w-auto object-contain bg-white rounded-xl sm:rounded-2xl shadow-sm border border-slate-100 p-1 sm:p-2"
+                />
+                <h1
+                  className="
+                    text-4xl
+                    sm:text-5xl
+                    md:text-6xl
+                    lg:text-7xl
+                    font-black
+                    text-slate-900
+                    tracking-tighter
+                  "
+                >
+                  Ic<span className="text-sky-500">NGMR</span>
+                </h1>
+              </div>
 
 
               <h2

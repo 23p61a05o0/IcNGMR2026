@@ -16,9 +16,20 @@ import {
   Mail,
   Instagram,
   Linkedin,
-  Twitter,
   Calendar,
 } from 'lucide-react';
+
+// Custom X (Twitter) Logo to match the lucide-react style
+const XLogo = ({ className }: { className?: string }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    className={className}
+  >
+    <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
+  </svg>
+);
 
 const Navbar: React.FC = () => {
   const [isEthicsOpen, setIsEthicsOpen] = useState(false);
@@ -255,7 +266,9 @@ const Navbar: React.FC = () => {
               "
             >
               <a
-                href="#"
+                href="https://www.instagram.com/icngmr2026/"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Instagram"
                 className="
                   hover:text-sky-200
@@ -267,7 +280,9 @@ const Navbar: React.FC = () => {
               </a>
 
               <a
-                href="#"
+                href="https://www.linkedin.com/in/icngmr-vbit-949a512b5/"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="LinkedIn"
                 className="
                   hover:text-sky-200
@@ -279,15 +294,17 @@ const Navbar: React.FC = () => {
               </a>
 
               <a
-                href="#"
-                aria-label="Twitter"
+                href="https://x.com/IcNGMR2026"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X"
                 className="
                   hover:text-sky-200
                   transition-colors
                   duration-300
                 "
               >
-                <Twitter className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                <XLogo className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </a>
             </div>
 
@@ -330,6 +347,23 @@ const Navbar: React.FC = () => {
           {/* Branding */}
           <div className="flex items-center space-x-3 sm:space-x-5 text-left">
 
+            {/* ICNGMR Logo Added Here */}
+            <img
+              src="/icngmr.png"
+              alt="ICNGMR Logo"
+              className={`
+                w-auto
+                object-contain
+                transition-all
+                duration-500
+                ${isScrolled
+                  ? 'h-10 sm:h-12'
+                  : 'h-14 sm:h-20'
+                }
+              `}
+            />
+
+            {/* VBIT Logo */}
             <img
               src="/vbit.jpg"
               alt="VBIT Logo"

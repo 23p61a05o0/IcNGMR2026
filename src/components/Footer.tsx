@@ -5,10 +5,23 @@ import {
   MapPin,
   Instagram,
   Linkedin,
-  Twitter,
   ExternalLink,
 } from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
+
+// Custom X (Twitter) Logo
+const XLogo = ({ className, size = 24 }: { className?: string; size?: number | string }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    className={className}
+    width={size}
+    height={size}
+  >
+    <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
+  </svg>
+);
 
 const Footer: React.FC = () => {
   const currentYear = 2026;
@@ -29,9 +42,17 @@ const Footer: React.FC = () => {
             direction="up"
             className="space-y-4 lg:col-span-1"
           >
-            <h2 className="text-2xl font-black tracking-tight">
-              Ic<span className="text-sky-400">NGMR</span> 2026
-            </h2>
+            <div className="flex items-center space-x-3">
+              {/* ICNGMR Logo */}
+              <img
+                src="/icngmr.png"
+                alt="ICNGMR Logo"
+                className="h-10 w-auto object-contain bg-white/90 p-1 rounded-md"
+              />
+              <h2 className="text-xl font-black tracking-tight">
+                Ic<span className="text-sky-400">NGMR</span> 2026
+              </h2>
+            </div>
 
             <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
               International Conference on Next-Generation Machine learning
@@ -42,7 +63,9 @@ const Footer: React.FC = () => {
 
               {/* Instagram */}
               <a
-                href="#"
+                href="https://www.instagram.com/icngmr2026/"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Instagram"
                 className="
                   p-2
@@ -58,7 +81,9 @@ const Footer: React.FC = () => {
 
               {/* LinkedIn */}
               <a
-                href="#"
+                href="https://www.linkedin.com/in/icngmr-vbit-949a512b5/"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="LinkedIn"
                 className="
                   p-2
@@ -72,10 +97,12 @@ const Footer: React.FC = () => {
                 <Linkedin size={18} />
               </a>
 
-              {/* Twitter */}
+              {/* X (Twitter) */}
               <a
-                href="#"
-                aria-label="Twitter"
+                href="https://x.com/IcNGMR2026"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X"
                 className="
                   p-2
                   bg-white/5
@@ -85,7 +112,7 @@ const Footer: React.FC = () => {
                   duration-300
                 "
               >
-                <Twitter size={18} />
+                <XLogo size={18} />
               </a>
 
             </div>
@@ -308,7 +335,6 @@ const Footer: React.FC = () => {
               Indexing Partner
             </h3>
 
-            {/* Kept Scopus commented out as in original, just removed its wrapper if you uncomment it later */}
             {/* <img
               src="scopus.png"
               alt="Indexing Partner 1"
