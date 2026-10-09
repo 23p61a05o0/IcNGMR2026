@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+
 import {
   ChevronDown,
   Menu,
@@ -12,6 +13,7 @@ import {
   Scale,
   UserPlus,
   Heart,
+  Award,
   Phone,
   Mail,
   Instagram,
@@ -115,16 +117,18 @@ const Navbar: React.FC = () => {
         to={to}
         onClick={onClick}
         className={`
+          isolate
           flex
           items-center
+          justify-center
           whitespace-nowrap
+          h-9
           text-[10px]
           lg:text-xs
           font-black
           tracking-wide
           px-2
           lg:px-2.5
-          py-2
           rounded-xl
           transition-colors
           duration-300
@@ -140,6 +144,7 @@ const Navbar: React.FC = () => {
             h-4
             w-4
             mr-2
+            flex-shrink-0
             ${isActive
               ? 'text-sky-500'
               : 'text-white'
@@ -151,10 +156,6 @@ const Navbar: React.FC = () => {
       </Link>
     );
   };
-
-  /* =========================================================
-     RENDER
-     ========================================================= */
 
   return (
     <>
@@ -170,8 +171,9 @@ const Navbar: React.FC = () => {
           sm:text-xs
           border-b
           border-white/10
-          transition-all
+          transition-[height,opacity,padding]
           duration-500
+          ease-out
           ${isScrolled
             ? 'h-0 opacity-0 overflow-hidden py-0'
             : 'py-2 opacity-100'
@@ -250,10 +252,8 @@ const Navbar: React.FC = () => {
             </a>
           </div>
 
-
           {/* Social Links */}
           <div className="flex items-center space-x-3">
-
             <div
               className="
                 flex
@@ -307,11 +307,9 @@ const Navbar: React.FC = () => {
                 <XLogo className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </a>
             </div>
-
           </div>
         </div>
       </div>
-
 
       {/* =====================================================
           2. MAIN BRANDING HEADER
@@ -320,8 +318,9 @@ const Navbar: React.FC = () => {
       <div
         className={`
           bg-white
-          transition-all
+          transition-[padding,border-color,box-shadow]
           duration-500
+          ease-out
           ${isScrolled
             ? 'py-2 border-b border-slate-100 shadow-sm'
             : 'py-4 sm:py-6'
@@ -343,19 +342,19 @@ const Navbar: React.FC = () => {
             lg:gap-6
           "
         >
-
           {/* Branding */}
           <div className="flex items-center space-x-3 sm:space-x-5 text-left">
 
-            {/* ICNGMR Logo Added Here */}
+            {/* ICNGMR Logo */}
             <img
               src="/icngmr.png"
               alt="ICNGMR Logo"
               className={`
                 w-auto
                 object-contain
-                transition-all
+                transition-[height]
                 duration-500
+                ease-out
                 ${isScrolled
                   ? 'h-10 sm:h-12'
                   : 'h-14 sm:h-20'
@@ -370,8 +369,9 @@ const Navbar: React.FC = () => {
               className={`
                 w-auto
                 object-contain
-                transition-all
+                transition-[height]
                 duration-500
+                ease-out
                 ${isScrolled
                   ? 'h-10 sm:h-12'
                   : 'h-14 sm:h-20'
@@ -432,7 +432,6 @@ const Navbar: React.FC = () => {
             </div>
           </div>
 
-
           {/* Accreditation Logos */}
           <div
             className={`
@@ -441,8 +440,9 @@ const Navbar: React.FC = () => {
               items-center
               space-x-4
               md:space-x-8
-              transition-all
+              transition-[transform]
               duration-500
+              ease-out
               ${isScrolled
                 ? 'scale-75 origin-right'
                 : 'scale-100'
@@ -478,12 +478,9 @@ const Navbar: React.FC = () => {
               alt="JNTUH"
               className="h-10 sm:h-14 w-auto"
             />
-
           </div>
-
         </div>
       </div>
-
 
       {/* =====================================================
           3. STICKY NAVIGATION
@@ -494,8 +491,9 @@ const Navbar: React.FC = () => {
           sticky
           top-0
           z-[100]
-          transition-all
+          transition-[background-color,box-shadow,padding]
           duration-500
+          ease-out
           ${isScrolled
             ? 'bg-sky-500/95 backdrop-blur-md shadow-2xl py-2'
             : 'bg-sky-500 py-3'
@@ -510,7 +508,15 @@ const Navbar: React.FC = () => {
                 DESKTOP NAVIGATION
             ================================================== */}
 
-            <div className="hidden xl:flex items-center justify-center gap-x-1.5">
+            <div
+              className="
+                hidden
+                xl:flex
+                items-center
+                justify-center
+                gap-x-2
+              "
+            >
 
               <NavLink to="/" icon={Home}>
                 Home
@@ -532,60 +538,64 @@ const Navbar: React.FC = () => {
                 Tracks
               </NavLink>
 
-
               {/* Important Dates */}
               <a
                 href="/#important-dates"
                 onClick={handleImportantDatesClick}
                 className="
+                  isolate
                   flex
                   items-center
+                  justify-center
                   whitespace-nowrap
+                  h-9
                   text-[10px]
                   lg:text-xs
                   font-black
                   text-white
                   px-2
                   lg:px-2.5
-                  py-2
                   rounded-xl
                   transition-colors
                   duration-300
+                  ease-out
                   hover:bg-white/20
                 "
               >
-                <Calendar className="h-4 w-4 mr-2" />
-
+                <Calendar className="h-4 w-4 mr-2 flex-shrink-0" />
                 Important Dates
               </a>
-
 
               {/* =================================================
                   ETHICS DROPDOWN
               ================================================== */}
 
               <div
-                className="relative group h-full"
+                className="relative group h-9 isolate"
                 onMouseEnter={() => setIsEthicsOpen(true)}
                 onMouseLeave={() => setIsEthicsOpen(false)}
               >
-
                 <button
                   type="button"
-                  onClick={() => setIsEthicsOpen((previous) => !previous)}
+                  onClick={() =>
+                    setIsEthicsOpen((previous) => !previous)
+                  }
                   className={`
+                    isolate
                     flex
                     items-center
+                    justify-center
                     whitespace-nowrap
+                    h-9
                     text-[10px]
                     lg:text-xs
                     font-black
                     px-2
                     lg:px-2.5
-                    py-2
                     rounded-xl
                     transition-colors
                     duration-300
+                    ease-out
                     ${location.pathname.includes('guidelines')
                       ? 'bg-gradient-to-br from-white to-sky-50 text-slate-900 shadow-lg border-b-2 border-sky-300'
                       : 'text-white hover:bg-white/20'
@@ -597,6 +607,7 @@ const Navbar: React.FC = () => {
                       h-4
                       w-4
                       mr-2
+                      flex-shrink-0
                       ${location.pathname.includes('guidelines')
                         ? 'text-sky-500'
                         : 'text-white'
@@ -611,8 +622,10 @@ const Navbar: React.FC = () => {
                       ml-1
                       h-3
                       w-3
+                      flex-shrink-0
                       transition-transform
                       duration-300
+                      ease-out
                       ${isEthicsOpen
                         ? 'rotate-180'
                         : ''
@@ -621,10 +634,8 @@ const Navbar: React.FC = () => {
                   />
                 </button>
 
-
                 {/* Dropdown Spacer */}
                 <div className="absolute h-4 w-full top-full" />
-
 
                 {/* Dropdown */}
                 <div
@@ -639,8 +650,9 @@ const Navbar: React.FC = () => {
                     py-3
                     border
                     border-slate-100
-                    transition-all
+                    transition-[opacity,transform]
                     duration-300
+                    ease-out
                     origin-top
                     ${isEthicsOpen
                       ? 'opacity-100 scale-100 translate-y-0'
@@ -688,9 +700,7 @@ const Navbar: React.FC = () => {
                     </Link>
                   ))}
                 </div>
-
               </div>
-
 
               <NavLink to="/registration" icon={UserPlus}>
                 Registration
@@ -704,8 +714,12 @@ const Navbar: React.FC = () => {
                 Acknowledgment
               </NavLink>
 
-            </div>
+              {/* CMT-Ack */}
+              <NavLink to="/cmt-ack" icon={Award}>
+                CMT-Ack
+              </NavLink>
 
+            </div>
 
             {/* =================================================
                 MOBILE / TABLET HEADER
@@ -742,7 +756,6 @@ const Navbar: React.FC = () => {
 
               </div>
 
-
               {/* Mobile Menu Button */}
               <button
                 type="button"
@@ -762,6 +775,7 @@ const Navbar: React.FC = () => {
                   rounded-xl
                   active:scale-90
                   transition-transform
+                  duration-200
                   shadow-inner
                 "
               >
@@ -777,7 +791,6 @@ const Navbar: React.FC = () => {
           </div>
         </div>
 
-
         {/* =====================================================
             MOBILE NAVIGATION DRAWER
         ====================================================== */}
@@ -786,8 +799,9 @@ const Navbar: React.FC = () => {
           className={`
             xl:hidden
             overflow-y-auto
-            transition-all
+            transition-[max-height,opacity]
             duration-500
+            ease-out
             bg-sky-600
             border-white/10
             ${isMobileMenuOpen
@@ -817,7 +831,6 @@ const Navbar: React.FC = () => {
               Home
             </Link>
 
-
             {/* About */}
             <Link
               to="/about"
@@ -836,7 +849,6 @@ const Navbar: React.FC = () => {
               <Info size={18} className="mr-3" />
               About
             </Link>
-
 
             {/* Keynote Speakers */}
             <Link
@@ -857,7 +869,6 @@ const Navbar: React.FC = () => {
               Keynote Speakers
             </Link>
 
-
             {/* Committee */}
             <Link
               to="/committee"
@@ -877,7 +888,6 @@ const Navbar: React.FC = () => {
               Committee
             </Link>
 
-
             {/* Tracks */}
             <Link
               to="/technical-tracks"
@@ -896,7 +906,6 @@ const Navbar: React.FC = () => {
               <BookOpen size={18} className="mr-3" />
               Tracks
             </Link>
-
 
             {/* Important Dates */}
             <button
@@ -919,7 +928,6 @@ const Navbar: React.FC = () => {
               <Calendar size={18} className="mr-3" />
               Important Dates
             </button>
-
 
             {/* =================================================
                 MOBILE ETHICS MENU
@@ -962,6 +970,7 @@ const Navbar: React.FC = () => {
                   className={`
                     transition-transform
                     duration-300
+                    ease-out
                     ${isMobileEthicsOpen
                       ? 'rotate-180'
                       : ''
@@ -969,7 +978,6 @@ const Navbar: React.FC = () => {
                   `}
                 />
               </button>
-
 
               {isMobileEthicsOpen && (
                 <div
@@ -991,6 +999,7 @@ const Navbar: React.FC = () => {
                       font-medium
                       hover:text-white
                       transition-colors
+                      duration-200
                     "
                   >
                     Author Guidelines
@@ -1006,6 +1015,7 @@ const Navbar: React.FC = () => {
                       font-medium
                       hover:text-white
                       transition-colors
+                      duration-200
                     "
                   >
                     Editor Guidelines
@@ -1021,6 +1031,7 @@ const Navbar: React.FC = () => {
                       font-medium
                       hover:text-white
                       transition-colors
+                      duration-200
                     "
                   >
                     Reviewer Guidelines
@@ -1036,6 +1047,7 @@ const Navbar: React.FC = () => {
                       font-medium
                       hover:text-white
                       transition-colors
+                      duration-200
                     "
                   >
                     Review Process
@@ -1044,7 +1056,6 @@ const Navbar: React.FC = () => {
               )}
 
             </div>
-
 
             {/* Contact */}
             <Link
@@ -1065,7 +1076,6 @@ const Navbar: React.FC = () => {
               Contact
             </Link>
 
-
             {/* Acknowledgment */}
             <Link
               to="/acknowledgment"
@@ -1085,6 +1095,24 @@ const Navbar: React.FC = () => {
               Acknowledgment
             </Link>
 
+            {/* CMT-Ack */}
+            <Link
+              to="/cmt-ack"
+              className="
+                flex
+                items-center
+                text-white
+                p-3
+                font-bold
+                rounded-xl
+                hover:bg-white/10
+                transition-colors
+                duration-200
+              "
+            >
+              <Award size={18} className="mr-3" />
+              CMT-Ack
+            </Link>
 
             {/* Register Button */}
             <div className="pt-4">
@@ -1118,7 +1146,6 @@ const Navbar: React.FC = () => {
 
           </div>
         </div>
-
       </nav>
     </>
   );

@@ -13,6 +13,7 @@ import ReviewerGuidelines from './pages/ReviewerGuidelines';
 import ReviewProcess from './pages/ReviewProcess';
 import Registration from './pages/Registration';
 import Acknowledgment from './pages/Acknowledgment';
+import CmtAck from './pages/CmtAck';
 import ContactAndAwards from './pages/ContactAndAwards';
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
             <Route path="/review-process" element={<ReviewProcess />} />
             <Route path="/registration" element={<Registration />} />
             <Route path="/acknowledgment" element={<Acknowledgment />} />
+            <Route path="/cmt-ack" element={<CmtAck />} />
             <Route path="/contact" element={<ContactAndAwards />} />
           </Routes>
         </main>
