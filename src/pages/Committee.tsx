@@ -23,13 +23,10 @@ const conferenceChair: Member[] = [
   { name: 'Dr. Dara Raju', title: 'Head of The Department, Dept. of C.S.E.' + AFFILIATION },
 ];
 
-const CoConvenor: Member[] = [
+// const CoConvenor: Member[] = [
 
-  { name: 'Dr. M. Venkateswara Rao', title: 'Professor, Dept. of C.S.E.' + AFFILIATION },
-  { name: 'Dr. G. Arun', title: 'Associate Professor, Dept. of C.S.E.' + AFFILIATION },
-  { name: 'Dr. B. Naresh Kumar', title: 'Associate Professor, Dept. of C.S.E.' + AFFILIATION },
 
-];
+// ];
 
 const internationalAdvisory: Member[] = [
   {
@@ -54,6 +51,7 @@ const nationalAdvisory: Member[] = [
   { name: 'Dr. V. Kamakshi Prasad', title: 'Senior Professor, JNTUH, Hyderabad, Telangana' },
   { name: 'Dr. Ch. Sudhakar', title: 'Professor, NIT, Warangal, Telangana, India' },
   { name: 'Dr. M. Naresh Babu', title: 'Associate Professor, IIITDM, Kurnool, Andhra Pradesh' },
+  { name: 'Dr. Jayanth Kulkarni', title: 'Professor, School of Education, DES Pune University, Pune Member of National Commission for Women, New Delhi' },
   { name: 'Dr. V. Ramesh', title: 'Professor, Tezpur University, Assam' },
   { name: 'Dr. M. S. Jagadeesh', title: 'Associate Professor, NITTTR Kolkata, West Bengal' },
   { name: 'Dr. Ch. Koteswara Rao', title: 'Associate Professor, Guru Ghasidas University, Chattisgarh' },
@@ -65,11 +63,17 @@ const nationalAdvisory: Member[] = [
 ];
 
 const organizingCommittee: Member[] = [
+  { name: 'Dr. M. Venkateswara Rao', title: 'Professor, Dept. of C.S.E.' + AFFILIATION },
   { name: 'Dr. A.L. Srinivasulu', title: 'Professor, Dept. of C.S.E.' + AFFILIATION },
+  { name: 'Dr. P. Subhadra', title: 'Associate Professor, Dept. of C.S.E.' + AFFILIATION },
   { name: 'Dr. N. Swapna', title: 'Associate Professor, Dept. of C.S.E.' + AFFILIATION },
-  { name: 'Dr. P. Yamini Devi', title: 'Associate Professor, Dept. of C.S.E.' + AFFILIATION },
+  { name: 'Dr. B. Naresh Kumar', title: 'Associate Professor, Dept. of C.S.E.' + AFFILIATION },
+
+  { name: 'Dr. Arun Ganji', title: 'Associate Professor, Dept. of C.S.E.' + AFFILIATION },
+
   { name: 'Dr. M. Kalpana', title: 'Associate Professor, Dept. of C.S.E.' + AFFILIATION },
-  { name: 'Dr. P. Subhadra', title: 'Associate Professor, Dept. of C.S.E.' + AFFILIATION }
+  { name: 'Dr. P. Yamini Devi', title: 'Associate Professor, Dept. of C.S.E.' + AFFILIATION },
+
 ];
 
 const steeringCommittee: Member[] = [
@@ -90,6 +94,8 @@ const steeringCommittee: Member[] = [
   { name: 'Dr. P. Kishore Kumar', title: 'HoD – M.E.' + AFFILIATION },
   { name: 'Dr. U. Ramakrishna', title: 'HoD – C.E.' + AFFILIATION },
   { name: 'Dr. P. Kalyani', title: 'HoD – FME' + AFFILIATION },
+  { name: 'Mr. K. Naresh Kumar', title: 'Director, IQAC, VBIT' },
+
 ];
 
 // const technicalProgrammeCommittee: Member[] = [
@@ -172,7 +178,7 @@ const Committee = () => (
       <CommitteeSection title="Chief Patrons" members={chiefPatrons} icon={<ShieldCheck className="h-4 w-4 sm:h-5 sm:w-5" />} />
       <CommitteeSection title="Patrons" members={patrons} icon={<Star className="h-4 w-4 sm:h-5 sm:w-5" />} />
       <CommitteeSection title="Convenor" members={conferenceChair} icon={<User className="h-4 w-4 sm:h-5 sm:w-5" />} />
-      <CommitteeSection title="Co-Convenor" members={CoConvenor} icon={<ShieldCheck className="h-4 w-4 sm:h-5 sm:w-5" />} />
+      {/* <CommitteeSection title="Co-Convenor" members={CoConvenor} icon={<ShieldCheck className="h-4 w-4 sm:h-5 sm:w-5" />} /> */}
       <CommitteeSection title="International Advisory Committee" members={internationalAdvisory} icon={<Globe className="h-4 w-4 sm:h-5 sm:w-5" />} />
       <CommitteeSection title="National Advisory Committee" members={nationalAdvisory} icon={<Award className="h-4 w-4 sm:h-5 sm:w-5" />} />
       <CommitteeSection title="Organizing Committee" members={organizingCommittee} icon={<Users className="h-4 w-4 sm:h-5 sm:w-5" />} />
