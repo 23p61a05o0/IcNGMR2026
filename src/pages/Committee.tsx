@@ -20,7 +20,7 @@ const patrons: Member[] = [
 ];
 
 const conferenceChair: Member[] = [
-  { name: 'Dr. Dara Raju', title: 'Head of The Department, Dept. of C.S.E.' + AFFILIATION },
+  { name: 'Dr. Dara Raju', title: 'Head of the Department, Dept. of C.S.E.' + AFFILIATION },
 ];
 
 // const CoConvenor: Member[] = [
