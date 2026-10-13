@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
@@ -21,7 +22,7 @@ import {
   Calendar,
 } from 'lucide-react';
 
-// Custom X (Twitter) Logo to match the lucide-react style
+// Custom X (Twitter) Logo
 const XLogo = ({ className }: { className?: string }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -42,17 +43,13 @@ const Navbar: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  /* =========================================================
-     SCROLL STATE
-     ========================================================= */
-
+  // Scroll state
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
 
     handleScroll();
-
     window.addEventListener('scroll', handleScroll, { passive: true });
 
     return () => {
@@ -60,25 +57,18 @@ const Navbar: React.FC = () => {
     };
   }, []);
 
-  /* =========================================================
-     CLOSE MOBILE MENU ON ROUTE CHANGE
-     ========================================================= */
-
+  // Close menus on route change
   useEffect(() => {
     setIsMobileMenuOpen(false);
     setIsMobileEthicsOpen(false);
     setIsEthicsOpen(false);
   }, [location]);
 
-  /* =========================================================
-     IMPORTANT DATES
-     ========================================================= */
-
+  // Important Dates
   const handleImportantDatesClick = (
     e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>
   ) => {
     e.preventDefault();
-
     setIsMobileMenuOpen(false);
 
     if (location.pathname === '/') {
@@ -95,10 +85,7 @@ const Navbar: React.FC = () => {
     }
   };
 
-  /* =========================================================
-     NAV LINK
-     ========================================================= */
-
+  // Reusable navigation link
   const NavLink = ({
     to,
     icon: Icon,
@@ -145,17 +132,37 @@ const Navbar: React.FC = () => {
             w-4
             mr-2
             flex-shrink-0
-            ${isActive
-              ? 'text-sky-500'
-              : 'text-white'
-            }
+            ${isActive ? 'text-sky-500' : 'text-white'}
           `}
         />
-
         {children}
       </Link>
     );
   };
+
+  // Ethics dropdown items shared by desktop and mobile
+  const ethicsItems = [
+    {
+      name: 'Author Guidelines',
+      path: '/author-guidelines',
+    },
+    {
+      name: 'Editor Guidelines',
+      path: '/editor-guidelines',
+    },
+    {
+      name: 'Reviewer Guidelines',
+      path: '/reviewer-guidelines',
+    },
+    {
+      name: 'Review Process',
+      path: '/review-process',
+    },
+    {
+      name: 'Acknowledgment',
+      path: '/acknowledgment',
+    },
+  ];
 
   return (
     <>
@@ -193,59 +200,21 @@ const Navbar: React.FC = () => {
         >
           {/* Contact Information */}
           <div className="flex items-center space-x-3 sm:space-x-6">
-
             {/* Phone */}
             <a
               href="tel:+919246411464"
-              className="
-                flex
-                items-center
-                hover:text-white
-                transition-colors
-                duration-300
-              "
+              className="flex items-center hover:text-white transition-colors duration-300"
             >
-              <Phone
-                className="
-                  w-3
-                  h-3
-                  sm:w-3.5
-                  sm:h-3.5
-                  mr-1
-                  sm:mr-2
-                  text-sky-200
-                "
-              />
-
-              <span>
-                +91 9246411464
-              </span>
+              <Phone className="w-3 h-3 sm:w-3.5 sm:h-3.5 mr-1 sm:mr-2 text-sky-200" />
+              <span>+91 9246411464</span>
             </a>
 
             {/* Email */}
             <a
               href="mailto:icngmr2026@vbithyd.ac.in"
-              className="
-                hidden
-                xs:flex
-                items-center
-                hover:text-white
-                transition-colors
-                duration-300
-              "
+              className="hidden xs:flex items-center hover:text-white transition-colors duration-300"
             >
-              <Mail
-                className="
-                  w-3
-                  h-3
-                  sm:w-3.5
-                  sm:h-3.5
-                  mr-1
-                  sm:mr-2
-                  text-sky-200
-                "
-              />
-
+              <Mail className="w-3 h-3 sm:w-3.5 sm:h-3.5 mr-1 sm:mr-2 text-sky-200" />
               <span className="truncate max-w-[150px] sm:max-w-none">
                 icngmr2026@vbithyd.ac.in
               </span>
@@ -254,27 +223,13 @@ const Navbar: React.FC = () => {
 
           {/* Social Links */}
           <div className="flex items-center space-x-3">
-            <div
-              className="
-                flex
-                items-center
-                space-x-2
-                sm:space-x-3
-                border-l
-                border-white/20
-                pl-3
-              "
-            >
+            <div className="flex items-center space-x-2 sm:space-x-3 border-l border-white/20 pl-3">
               <a
                 href="https://www.instagram.com/icngmr2026/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="
-                  hover:text-sky-200
-                  transition-colors
-                  duration-300
-                "
+                className="hover:text-sky-200 transition-colors duration-300"
               >
                 <Instagram className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </a>
@@ -284,11 +239,7 @@ const Navbar: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="
-                  hover:text-sky-200
-                  transition-colors
-                  duration-300
-                "
+                className="hover:text-sky-200 transition-colors duration-300"
               >
                 <Linkedin className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </a>
@@ -298,11 +249,7 @@ const Navbar: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="X"
-                className="
-                  hover:text-sky-200
-                  transition-colors
-                  duration-300
-                "
+                className="hover:text-sky-200 transition-colors duration-300"
               >
                 <XLogo className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </a>
@@ -344,7 +291,6 @@ const Navbar: React.FC = () => {
         >
           {/* Branding */}
           <div className="flex items-center space-x-3 sm:space-x-5 text-left">
-
             {/* ICNGMR Logo */}
             <img
               src="/icngmr.png"
@@ -355,10 +301,7 @@ const Navbar: React.FC = () => {
                 transition-[height]
                 duration-500
                 ease-out
-                ${isScrolled
-                  ? 'h-10 sm:h-12'
-                  : 'h-14 sm:h-20'
-                }
+                ${isScrolled ? 'h-10 sm:h-12' : 'h-14 sm:h-20'}
               `}
             />
 
@@ -372,15 +315,11 @@ const Navbar: React.FC = () => {
                 transition-[height]
                 duration-500
                 ease-out
-                ${isScrolled
-                  ? 'h-10 sm:h-12'
-                  : 'h-14 sm:h-20'
-                }
+                ${isScrolled ? 'h-10 sm:h-12' : 'h-14 sm:h-20'}
               `}
             />
 
             <div className="border-l-2 border-sky-100 pl-2.5 sm:pl-5">
-
               <h1
                 className="
                   text-[11px]
@@ -397,7 +336,6 @@ const Navbar: React.FC = () => {
               </h1>
 
               <div className="mt-0.5 sm:mt-1">
-
                 <p
                   className="
                     text-sky-600
@@ -427,7 +365,6 @@ const Navbar: React.FC = () => {
                 >
                   “Next-Generation Machine learning and Reconfigurable intelligence”
                 </p>
-
               </div>
             </div>
           </div>
@@ -443,15 +380,12 @@ const Navbar: React.FC = () => {
               transition-[transform]
               duration-500
               ease-out
-              ${isScrolled
-                ? 'scale-75 origin-right'
-                : 'scale-100'
-              }
+              ${isScrolled ? 'scale-75 origin-right' : 'scale-100'}
             `}
           >
             <img
               src="/aicte.png"
-              alt="aicte"
+              alt="AICTE"
               className="h-10 sm:h-14 w-auto"
             />
 
@@ -469,7 +403,7 @@ const Navbar: React.FC = () => {
 
             <img
               src="/ugc.png"
-              alt="ugc"
+              alt="UGC"
               className="h-10 sm:h-14 w-auto"
             />
 
@@ -501,23 +435,9 @@ const Navbar: React.FC = () => {
         `}
       >
         <div className="max-w-[98%] mx-auto px-4">
-
           <div className="flex justify-center items-center">
-
-            {/* =================================================
-                DESKTOP NAVIGATION
-            ================================================== */}
-
-            <div
-              className="
-                hidden
-                xl:flex
-                items-center
-                justify-center
-                gap-x-2
-              "
-            >
-
+            {/* DESKTOP NAVIGATION */}
+            <div className="hidden xl:flex items-center justify-center gap-x-2">
               <NavLink to="/" icon={Home}>
                 Home
               </NavLink>
@@ -566,10 +486,7 @@ const Navbar: React.FC = () => {
                 Important Dates
               </a>
 
-              {/* =================================================
-                  ETHICS DROPDOWN
-              ================================================== */}
-
+              {/* ETHICS & MALPRACTICES DROPDOWN */}
               <div
                 className="relative group h-9 isolate"
                 onMouseEnter={() => setIsEthicsOpen(true)}
@@ -577,6 +494,7 @@ const Navbar: React.FC = () => {
               >
                 <button
                   type="button"
+                  aria-expanded={isEthicsOpen}
                   onClick={() =>
                     setIsEthicsOpen((previous) => !previous)
                   }
@@ -596,7 +514,9 @@ const Navbar: React.FC = () => {
                     transition-colors
                     duration-300
                     ease-out
-                    ${location.pathname.includes('guidelines')
+                    ${location.pathname.includes('guidelines') ||
+                      location.pathname === '/review-process' ||
+                      location.pathname === '/acknowledgment'
                       ? 'bg-gradient-to-br from-white to-sky-50 text-slate-900 shadow-lg border-b-2 border-sky-300'
                       : 'text-white hover:bg-white/20'
                     }
@@ -608,7 +528,9 @@ const Navbar: React.FC = () => {
                       w-4
                       mr-2
                       flex-shrink-0
-                      ${location.pathname.includes('guidelines')
+                      ${location.pathname.includes('guidelines') ||
+                        location.pathname === '/review-process' ||
+                        location.pathname === '/acknowledgment'
                         ? 'text-sky-500'
                         : 'text-white'
                       }
@@ -626,10 +548,7 @@ const Navbar: React.FC = () => {
                       transition-transform
                       duration-300
                       ease-out
-                      ${isEthicsOpen
-                        ? 'rotate-180'
-                        : ''
-                      }
+                      ${isEthicsOpen ? 'rotate-180' : ''}
                     `}
                   />
                 </button>
@@ -660,24 +579,7 @@ const Navbar: React.FC = () => {
                     }
                   `}
                 >
-                  {[
-                    {
-                      name: 'Author Guidelines',
-                      path: '/author-guidelines',
-                    },
-                    {
-                      name: 'Editor Guidelines',
-                      path: '/editor-guidelines',
-                    },
-                    {
-                      name: 'Reviewer Guidelines',
-                      path: '/reviewer-guidelines',
-                    },
-                    {
-                      name: 'Review Process',
-                      path: '/review-process',
-                    },
-                  ].map((item) => (
+                  {ethicsItems.map((item) => (
                     <Link
                       key={item.name}
                       to={item.path}
@@ -710,25 +612,15 @@ const Navbar: React.FC = () => {
                 Contact
               </NavLink>
 
-              <NavLink to="/acknowledgment" icon={Heart}>
-                Acknowledgment
-              </NavLink>
-
-              {/* CMT-Ack */}
+              {/* CMT-Acknowledgement: standalone button retained */}
               <NavLink to="/cmt-ack" icon={Award}>
-                CMT-Ack
+                CMT-Acknowledgement
               </NavLink>
-
             </div>
 
-            {/* =================================================
-                MOBILE / TABLET HEADER
-            ================================================== */}
-
+            {/* MOBILE / TABLET HEADER */}
             <div className="xl:hidden flex justify-between w-full items-center">
-
               <div className="flex flex-col">
-
                 <span
                   className="
                     text-white
@@ -753,7 +645,6 @@ const Navbar: React.FC = () => {
                 >
                   International Conference
                 </span>
-
               </div>
 
               {/* Mobile Menu Button */}
@@ -785,9 +676,7 @@ const Navbar: React.FC = () => {
                   <Menu size={26} />
                 )}
               </button>
-
             </div>
-
           </div>
         </div>
 
@@ -811,7 +700,6 @@ const Navbar: React.FC = () => {
           `}
         >
           <div className="p-6 space-y-2">
-
             {/* Home */}
             <Link
               to="/"
@@ -929,18 +817,13 @@ const Navbar: React.FC = () => {
               Important Dates
             </button>
 
-            {/* =================================================
-                MOBILE ETHICS MENU
-            ================================================== */}
-
+            {/* MOBILE ETHICS MENU */}
             <div className="space-y-1">
-
               <button
                 type="button"
+                aria-expanded={isMobileEthicsOpen}
                 onClick={() =>
-                  setIsMobileEthicsOpen(
-                    (previous) => !previous
-                  )
+                  setIsMobileEthicsOpen((previous) => !previous)
                 }
                 className="
                   w-full
@@ -957,11 +840,7 @@ const Navbar: React.FC = () => {
                 "
               >
                 <div className="flex items-center">
-                  <Scale
-                    size={18}
-                    className="mr-3"
-                  />
-
+                  <Scale size={18} className="mr-3" />
                   Ethics & Malpractices
                 </div>
 
@@ -971,10 +850,7 @@ const Navbar: React.FC = () => {
                     transition-transform
                     duration-300
                     ease-out
-                    ${isMobileEthicsOpen
-                      ? 'rotate-180'
-                      : ''
-                    }
+                    ${isMobileEthicsOpen ? 'rotate-180' : ''}
                   `}
                 />
               </button>
@@ -989,72 +865,26 @@ const Navbar: React.FC = () => {
                     p-2
                   "
                 >
-                  <Link
-                    to="/author-guidelines"
-                    className="
-                      block
-                      p-2
-                      text-sky-100
-                      text-sm
-                      font-medium
-                      hover:text-white
-                      transition-colors
-                      duration-200
-                    "
-                  >
-                    Author Guidelines
-                  </Link>
-
-                  <Link
-                    to="/editor-guidelines"
-                    className="
-                      block
-                      p-2
-                      text-sky-100
-                      text-sm
-                      font-medium
-                      hover:text-white
-                      transition-colors
-                      duration-200
-                    "
-                  >
-                    Editor Guidelines
-                  </Link>
-
-                  <Link
-                    to="/reviewer-guidelines"
-                    className="
-                      block
-                      p-2
-                      text-sky-100
-                      text-sm
-                      font-medium
-                      hover:text-white
-                      transition-colors
-                      duration-200
-                    "
-                  >
-                    Reviewer Guidelines
-                  </Link>
-
-                  <Link
-                    to="/review-process"
-                    className="
-                      block
-                      p-2
-                      text-sky-100
-                      text-sm
-                      font-medium
-                      hover:text-white
-                      transition-colors
-                      duration-200
-                    "
-                  >
-                    Review Process
-                  </Link>
+                  {ethicsItems.map((item) => (
+                    <Link
+                      key={item.name}
+                      to={item.path}
+                      className="
+                        block
+                        p-2
+                        text-sky-100
+                        text-sm
+                        font-medium
+                        hover:text-white
+                        transition-colors
+                        duration-200
+                      "
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
                 </div>
               )}
-
             </div>
 
             {/* Contact */}
@@ -1076,26 +906,7 @@ const Navbar: React.FC = () => {
               Contact
             </Link>
 
-            {/* Acknowledgment */}
-            <Link
-              to="/acknowledgment"
-              className="
-                flex
-                items-center
-                text-white
-                p-3
-                font-bold
-                rounded-xl
-                hover:bg-white/10
-                transition-colors
-                duration-200
-              "
-            >
-              <Heart size={18} className="mr-3" />
-              Acknowledgment
-            </Link>
-
-            {/* CMT-Ack */}
+            {/* CMT-Acknowledgement: standalone button retained */}
             <Link
               to="/cmt-ack"
               className="
@@ -1111,12 +922,11 @@ const Navbar: React.FC = () => {
               "
             >
               <Award size={18} className="mr-3" />
-              CMT-Ack
+              CMT-Acknowledgement
             </Link>
 
             {/* Register Button */}
             <div className="pt-4">
-
               <Link
                 to="/registration"
                 className="
@@ -1138,12 +948,9 @@ const Navbar: React.FC = () => {
                   size={20}
                   className="inline-block mr-2"
                 />
-
                 Register Now
               </Link>
-
             </div>
-
           </div>
         </div>
       </nav>

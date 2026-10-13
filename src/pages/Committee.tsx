@@ -106,18 +106,18 @@ const steeringCommittee: Member[] = [
 const publicationCommittee: Member[] = [
   { name: 'Dr. P. Subhadra', title: 'Associate Professor, Dept. of C.S.E.' + AFFILIATION },
   { name: 'Dr. M. Kalpana', title: 'Associate Professor, Dept. of C.S.E.' + AFFILIATION },
-  { name: 'Mr. D. Srinivas Goud', title: 'Associate Professor, Dept. of C.S.E.' + AFFILIATION },
-  { name: 'Mr. S. Venkata Satyakrishna', title: 'Associate Professor, Dept. of C.S.E.' + AFFILIATION },
+  { name: 'Mr. D. Srinivas Goud', title: 'Assistant Professor, Dept. of C.S.E.' + AFFILIATION },
+  { name: 'Mr. S. Venkata Satyakrishna', title: 'Assistant Professor, Dept. of C.S.E.' + AFFILIATION },
 ];
 
 const registrationCommittee: Member[] = [
 
   { name: 'Ms. P. Suvarnapushpa', title: 'Assistant Professor, Dept. of C.S.E.' + AFFILIATION },
-  { name: 'Ms. K. Priyabhashini', title: 'Assistant Professor, Dept. of C.S.E.' + AFFILIATION },
+  { name: 'Ms. K. Priyabhashini', title: 'Associate Professor, Dept. of C.S.E.' + AFFILIATION },
   { name: 'Ms. A. Sandhyarani', title: 'Assistant Professor, Dept. of C.S.E.' + AFFILIATION },
-  { name: 'Ms. R. Sumathi', title: 'Associate Professor, Dept. of C.S.E.' + AFFILIATION },
+  { name: 'Ms. R. Sumathi', title: 'Assistant Professor, Dept. of C.S.E.' + AFFILIATION },
   { name: 'Ms. P. Swathi', title: 'Assistant Professor, Dept. of C.S.E.' + AFFILIATION },
-  { name: 'Ms. A.P. Chaitanyasri Mouli', title: 'Professor, Dept. of C.S.E.' + AFFILIATION },
+  { name: 'Ms. A.P. Chaitanyasri Mouli', title: 'Assistant Professor, Dept. of C.S.E.' + AFFILIATION },
 ];
 
 // const publicityCommittee: Member[] = [
@@ -127,8 +127,8 @@ const registrationCommittee: Member[] = [
 // ];
 
 const hospitalityCommittee: Member[] = [
-  { name: 'Dr. S. Ramesh', title: 'Assistant Professor, Dept. of C.S.E.' + AFFILIATION },
-  { name: 'Mr. G. Srikanth Reddy', title: 'Assistant Professor, Dept. of C.S.E.' + AFFILIATION },
+  { name: 'Mr. G. Srikanth Reddy', title: 'Associate Professor, Dept. of C.S.E.' + AFFILIATION },
+  { name: 'Mr. S. Ramesh', title: 'Assistant Professor, Dept. of C.S.E.' + AFFILIATION },
   { name: 'Mr. S. Nagarjuna', title: 'Assistant Professor, Dept. of C.S.E.' + AFFILIATION },
   { name: 'Ms. N. Sudharani', title: 'Assistant Professor, Dept. of C.S.E.' + AFFILIATION },
   { name: 'Mr. Degavath Raju', title: 'Assistant Professor, Dept. of C.S.E.' + AFFILIATION },

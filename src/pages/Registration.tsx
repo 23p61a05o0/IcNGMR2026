@@ -108,7 +108,7 @@ const Registration: React.FC = () => {
                       <td className="px-4 sm:px-6 py-3.5 sm:py-5 font-black text-slate-900">USD 150</td>
                     </tr>
                     <tr className="hover:bg-sky-50/60 transition-colors">
-                      <td className="px-4 sm:px-6 py-3.5 sm:py-5 font-medium text-slate-700">Academicians</td>
+                      <td className="px-4 sm:px-6 py-3.5 sm:py-5 font-medium text-slate-700">Research Scholars/<br></br>Academicians</td>
                       <td className="px-4 sm:px-6 py-3.5 sm:py-5 font-black text-slate-900">₹10,000</td>
                       <td className="px-4 sm:px-6 py-3.5 sm:py-5 font-black text-slate-900">USD 110</td>
                     </tr>
@@ -122,23 +122,58 @@ const Registration: React.FC = () => {
           <ScrollReveal variant="3d" direction="up" delay={250}>
             <div className="bg-slate-900 rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 text-white flex flex-col md:flex-row items-center gap-8 sm:gap-12 md:hover:shadow-2xl md:hover:shadow-sky-500/20 transition-all duration-500">
               <div className="flex-1 w-full space-y-4 sm:space-y-6">
-                <h2 className="text-2xl sm:text-3xl font-black">Payment Details</h2>
+                <h2 className="text-2xl sm:text-3xl font-black">
+                  Payment Details
+                </h2>
+
                 <div className="grid grid-cols-1 gap-3 sm:gap-4 text-slate-300 text-xs sm:text-sm">
-                  <div className="flex justify-between border-b border-white/10 pb-2">
+                  <div className="flex justify-between items-start gap-4 border-b border-white/10 pb-2">
                     <span>Account Number</span>
-                    <span className="text-sky-400 font-mono font-bold">1421350000009470</span>
+                    <span className="text-sky-400 font-mono font-bold">
+                      3003101005882
+                    </span>
                   </div>
-                  <div className="flex justify-between border-b border-white/10 pb-2">
+
+                  <div className="flex justify-between items-start gap-4 border-b border-white/10 pb-2">
                     <span>IFSC Code</span>
-                    <span className="text-sky-400 font-mono font-bold">KVBL0001412</span>
+                    <span className="text-sky-400 font-mono font-bold">
+                      CNRB0003003
+                    </span>
                   </div>
-                  <div className="flex justify-between">
+
+                  <div className="flex justify-between items-start gap-4 border-b border-white/10 pb-2">
                     <span>Account Name</span>
-                    <span className="text-white font-bold">EISPL, KVB Bank</span>
+                    <span className="text-sky-400 font-bold text-right">
+                      VBIT CSE TEMP
+                    </span>
+                  </div>
+
+                  <div className="flex justify-between items-start gap-4">
+                    <span>Bank</span>
+                    <span className="text-sky-400 font-bold text-right">
+                      Canara Bank
+                    </span>
+                  </div>
+
+                  <div className="flex justify-between items-start gap-4">
+                    <span>Branch</span>
+                    <span className="text-sky-400 font-bold text-right">
+                      Pocharam
+                    </span>
+                  </div>
+
+                  <div className="flex justify-between items-start gap-4">
+                    <span>Address</span>
+                    <span className="text-sky-400 font-bold text-right">
+                      Pocharam, Telangana - 500688
+                    </span>
                   </div>
                 </div>
+
                 <div className="mt-6 sm:mt-8 p-3 sm:p-4 bg-white/10 rounded-xl border border-white/5 w-full text-center md:hover:bg-white/15 transition-colors">
-                  <p className="text-sky-300 font-bold text-xs sm:text-sm">UPI: 9593468716@KCL</p>
+                  <p className="text-sky-300 font-bold text-xs sm:text-sm">
+                    UPI: ----------@KCL
+                  </p>
                 </div>
               </div>
 
@@ -146,10 +181,14 @@ const Registration: React.FC = () => {
                 <div className="bg-white p-4 sm:p-5 rounded-2xl sm:rounded-3xl shadow-xl md:hover:rotate-6 md:hover:scale-110 md:hover:shadow-2xl transition-all duration-500 cursor-pointer">
                   <QrCode className="h-28 w-28 sm:h-32 sm:w-32 text-slate-900" />
                 </div>
-                <p className="mt-3 text-[10px] sm:text-xs text-slate-400 uppercase tracking-widest font-bold">Secure Payment Terminal</p>
+
+                <p className="mt-3 text-[10px] sm:text-xs text-slate-400 uppercase tracking-widest font-bold">
+                  Secure Payment Terminal
+                </p>
               </div>
             </div>
           </ScrollReveal>
+
 
         </div>
       </div>
