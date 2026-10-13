@@ -614,7 +614,7 @@ const Navbar: React.FC = () => {
 
               {/* CMT-Acknowledgement: standalone button retained */}
               <NavLink to="/cmt-ack" icon={Award}>
-                CMT-Acknowledgement
+                Acknowledgement
               </NavLink>
             </div>
 
@@ -922,7 +922,7 @@ const Navbar: React.FC = () => {
               "
             >
               <Award size={18} className="mr-3" />
-              CMT-Acknowledgement
+              Acknowledgement
             </Link>
 
             {/* Register Button */}
