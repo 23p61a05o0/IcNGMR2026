@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -16,12 +17,17 @@ import Acknowledgment from './pages/Acknowledgment';
 import CmtAck from './pages/CmtAck';
 import ContactAndAwards from './pages/ContactAndAwards';
 
-function App() {
+function AppContent() {
+  const location = useLocation();
+  const hideFooter = location.pathname === '/acknowledgment';
+
   return (
-    <Router>
+    <>
       <ScrollToTop />
+
       <div className="min-h-screen bg-gray-50">
         <Navbar />
+
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -39,8 +45,17 @@ function App() {
             <Route path="/contact" element={<ContactAndAwards />} />
           </Routes>
         </main>
-        <Footer />
+
+        {!hideFooter && <Footer />}
       </div>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <AppContent />
     </Router>
   );
 }
