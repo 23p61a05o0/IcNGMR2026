@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acknowledgment | ICNGMR 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f8fafc;
+            color: #0f172a;
+        }
+
+        main {
+            width: min(900px, calc(100% - 32px));
+            margin: 48px auto;
+        }
+
+        h1 {
+            margin: 0 0 24px;
+            text-align: center;
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 800;
+        }
+
+        .accent {
+            width: 56px;
+            height: 4px;
+            margin: -10px auto 28px;
+            border-radius: 4px;
+            background: #facc15;
+        }
+
+        .acknowledgment-card {
+            padding: 28px 32px;
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgb(15 23 42 / 4%);
+        }
+
+        p {
+            margin: 0;
+            font-family: Calibri, Arial, sans-serif;
+            font-size: 20px;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        @media (max-width: 600px) {
+            main {
+                margin: 32px auto;
+            }
+
+            .acknowledgment-card {
+                padding: 22px 20px;
+            }
+
+            p {
+                font-size: 17px;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Acknowledgment</h1>
+        <div class="accent"></div>
+
+        <section class="acknowledgment-card">
+            <p>The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This
+                service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud
+                services as well as for software development and support.</p>
+        </section>
+    </main>
+</body>
+
+</html>
