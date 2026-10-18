@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Globe, Award, Mic2 } from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
@@ -22,6 +23,12 @@ const KeynoteSpeakers: React.FC = () => {
         'James Watt School of Engineering\n(Electronic & Nanoscale Engineering)\nResearch Manager\nUniversity of Glasgow, Scotland, U.K',
       image: '/bhavani.jpg',
     },
+    {
+      name: 'Kranti Kumar Appari',
+      title:
+        'Engineering Director | (DMTS)\nFellowship Member, BCS | IEEE Member\nPhD Student in Telecommunications, Andhra University',
+      image: '/kranthi.png',
+    },
   ];
 
   const nationalSpeakers = [
@@ -41,16 +48,6 @@ const KeynoteSpeakers: React.FC = () => {
 
   /* =========================================================
      SPEAKER CARD
-
-     Desktop:
-     - Hover lift
-     - Subtle shadow
-     - Small image zoom
-
-     Mobile:
-     - ScrollReveal
-     - No hover dependency
-     - Each card reveals independently
   ========================================================= */
 
   const SpeakerCard = ({
@@ -74,13 +71,14 @@ const KeynoteSpeakers: React.FC = () => {
         threshold={0.05}
         rootMargin="0px 0px -15% 0px"
         triggerOnce={true}
-        className="w-full sm:w-auto flex justify-center"
+        className="w-full h-full flex justify-center"
       >
         <div
           className="
             group
-
             w-full
+            h-full
+            min-h-[390px]
             max-w-[320px]
             sm:max-w-[340px]
 
@@ -106,18 +104,13 @@ const KeynoteSpeakers: React.FC = () => {
             duration-500
             ease-out
 
-            /* Desktop hover only */
             md:hover:-translate-y-2
             md:hover:shadow-xl
             md:hover:shadow-slate-300/40
             md:hover:border-sky-200
           "
         >
-
-          {/* =================================================
-              PHOTO
-          ================================================== */}
-
+          {/* PHOTO */}
           <div
             className="
               relative
@@ -126,9 +119,9 @@ const KeynoteSpeakers: React.FC = () => {
               h-32
               sm:w-40
               sm:h-40
+              shrink-0
             "
           >
-
             {/* Subtle colored ring */}
             <div
               className={`
@@ -145,10 +138,7 @@ const KeynoteSpeakers: React.FC = () => {
                 md:group-hover:opacity-[0.14]
                 md:group-hover:scale-105
 
-                ${type === 'intl'
-                  ? 'bg-sky-500'
-                  : 'bg-indigo-500'
-                }
+                ${type === 'intl' ? 'bg-sky-500' : 'bg-indigo-500'}
               `}
             />
 
@@ -187,7 +177,6 @@ const KeynoteSpeakers: React.FC = () => {
                 "
               />
             </div>
-
 
             {/* Speaker Type */}
             <div
@@ -236,16 +225,10 @@ const KeynoteSpeakers: React.FC = () => {
                 />
               )}
             </div>
-
           </div>
 
-
-          {/* =================================================
-              DETAILS
-          ================================================== */}
-
-          <div className="text-center">
-
+          {/* DETAILS */}
+          <div className="text-center flex flex-col flex-1 w-full">
             <h3
               className="
                 text-base
@@ -268,7 +251,6 @@ const KeynoteSpeakers: React.FC = () => {
               {speaker.name}
             </h3>
 
-
             <p
               className="
                 text-slate-500
@@ -288,14 +270,11 @@ const KeynoteSpeakers: React.FC = () => {
             >
               {speaker.title}
             </p>
-
           </div>
-
         </div>
       </ScrollReveal>
     );
   };
-
 
   return (
     <div
@@ -307,7 +286,6 @@ const KeynoteSpeakers: React.FC = () => {
         lg:py-12
       "
     >
-
       <div
         className="
           max-w-7xl
@@ -317,13 +295,11 @@ const KeynoteSpeakers: React.FC = () => {
           lg:px-12
         "
       >
-
         {/* =====================================================
             INTERNATIONAL SPEAKERS
         ====================================================== */}
 
         <section className="mb-14 sm:mb-16">
-
           <ScrollReveal
             variant="3d"
             direction="down"
@@ -338,7 +314,6 @@ const KeynoteSpeakers: React.FC = () => {
               sm:mb-10
             "
           >
-
             {/* Label */}
             <div
               className="
@@ -367,10 +342,8 @@ const KeynoteSpeakers: React.FC = () => {
               "
             >
               <Mic2 className="h-3 w-3 mr-2" />
-
               <span>Global Expertise</span>
             </div>
-
 
             <h2
               className="
@@ -387,7 +360,6 @@ const KeynoteSpeakers: React.FC = () => {
               International Keynote Speakers
             </h2>
 
-
             {/* Minimal divider */}
             <div
               className="
@@ -400,20 +372,23 @@ const KeynoteSpeakers: React.FC = () => {
                 rounded-full
               "
             />
-
           </ScrollReveal>
 
-
-          {/* Cards */}
+          {/* Cards: 2 x 2 on desktop */}
           <div
             className="
-              flex
-              flex-wrap
-              justify-center
+              grid
+              grid-cols-1
+              sm:grid-cols-2
+              justify-items-center
+              items-stretch
 
               gap-5
               sm:gap-7
               lg:gap-8
+
+              max-w-4xl
+              mx-auto
             "
           >
             {internationalSpeakers.map((speaker, index) => (
@@ -425,16 +400,13 @@ const KeynoteSpeakers: React.FC = () => {
               />
             ))}
           </div>
-
         </section>
-
 
         {/* =====================================================
             NATIONAL SPEAKERS
         ====================================================== */}
 
         <section>
-
           <ScrollReveal
             variant="3d"
             direction="down"
@@ -449,7 +421,6 @@ const KeynoteSpeakers: React.FC = () => {
               sm:mb-10
             "
           >
-
             {/* Label */}
             <div
               className="
@@ -478,10 +449,8 @@ const KeynoteSpeakers: React.FC = () => {
               "
             >
               <Award className="h-3 w-3 mr-2" />
-
               <span>National Excellence</span>
             </div>
-
 
             <h2
               className="
@@ -498,7 +467,6 @@ const KeynoteSpeakers: React.FC = () => {
               National Keynote Speakers
             </h2>
 
-
             {/* Minimal divider */}
             <div
               className="
@@ -511,20 +479,23 @@ const KeynoteSpeakers: React.FC = () => {
                 rounded-full
               "
             />
-
           </ScrollReveal>
 
-
-          {/* Cards */}
+          {/* Cards: 2 in one row on desktop */}
           <div
             className="
-              flex
-              flex-wrap
-              justify-center
+              grid
+              grid-cols-1
+              sm:grid-cols-2
+              justify-items-center
+              items-stretch
 
               gap-5
               sm:gap-7
               lg:gap-8
+
+              max-w-4xl
+              mx-auto
             "
           >
             {nationalSpeakers.map((speaker, index) => (
@@ -536,9 +507,7 @@ const KeynoteSpeakers: React.FC = () => {
               />
             ))}
           </div>
-
         </section>
-
       </div>
     </div>
   );

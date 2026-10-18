@@ -42,19 +42,52 @@ const Registration: React.FC = () => {
           </ScrollReveal>
 
           {/* Quick Links Row */}
-          <ScrollReveal variant="3d" direction="up" delay={100} className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-10 sm:mb-16">
+
+          <ScrollReveal
+            variant="3d"
+            direction="up"
+            delay={100}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-10 sm:mb-16"
+          >
             {[
-              { label: 'Paper Format', icon: FileText, color: 'text-blue-600' },
-              { label: 'CMT Link', icon: LinkIcon, color: 'text-purple-600' },
-              { label: 'Registration Link', icon: CheckCircle, color: 'text-green-600' },
+              {
+                label: 'Paper Format',
+                icon: FileText,
+                color: 'text-blue-600',
+                href: 'https://www.itm-conferences.org/doc_journal/woc/woc_2col.docx',
+              },
+              {
+                label: 'CMT Link',
+                icon: LinkIcon,
+                color: 'text-purple-600',
+                href: 'https://cmt3.research.microsoft.com/ICNGMR2026/Submission/Manage',
+              },
+              {
+                label: 'Registration Link',
+                icon: CheckCircle,
+                color: 'text-green-600',
+                href: 'https://docs.google.com/forms/d/e/1FAIpQLSfhfeF_fWnQkC-5cloe4A9dLPvXAJg8pBBWkial6jA4css25w/viewform',
+              },
+              {
+                label: 'Copyright Form',
+                icon: FileText,
+                color: 'text-orange-600',
+                href: 'https://www.itm-conferences.org/doc_journal/woc/publication_right_form.pdf',
+              },
             ].map((item) => (
               <a
                 key={item.label}
-                href="#"
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group flex items-center justify-center p-4 sm:p-5 rounded-xl sm:rounded-2xl border border-slate-100 bg-white shadow-sm md:hover:-translate-y-1.5 md:hover:shadow-xl md:hover:border-sky-300 md:hover:scale-[1.02] active:scale-95 transition-all duration-300"
               >
-                <item.icon className={`h-5 w-5 mr-3 flex-shrink-0 ${item.color} group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300`} />
-                <span className="font-bold text-sm sm:text-base text-slate-700 group-hover:text-sky-600 transition-colors">{item.label}</span>
+                <item.icon
+                  className={`h-5 w-5 mr-3 flex-shrink-0 ${item.color} group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300`}
+                />
+                <span className="font-bold text-sm sm:text-base text-slate-700 group-hover:text-sky-600 transition-colors">
+                  {item.label}
+                </span>
               </a>
             ))}
           </ScrollReveal>

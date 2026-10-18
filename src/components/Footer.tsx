@@ -335,21 +335,21 @@ const Footer: React.FC = () => {
               Indexing Partner
             </h3>
 
-            {/* <img
-              src="scopus.png"
-              alt="Indexing Partner 1"
+            <img
+              src="webOfS.png"
+              alt="Indexing Partner "
               className="
-                h-16 
-                w-auto 
-                object-contain 
-                bg-white/90 
-                rounded-lg 
-                p-2 
-                hover:bg-white 
-                transition-colors 
-                duration-300
-              "
-            /> */}
+              h-16 
+              w-auto 
+              object-contain 
+              bg-white/90 
+              rounded-lg 
+              p-2 
+              hover:bg-white 
+              transition-colors 
+              duration-300
+            "
+            />
             <img
               src="clarivate.png"
               alt="Indexing Partner 2"

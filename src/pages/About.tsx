@@ -6,8 +6,12 @@ import {
   ArrowRight,
 } from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
+import { useNavigate } from 'react-router-dom';
+
+
 
 const About: React.FC = () => {
+  const navigate = useNavigate();
   const leadership = [
     {
       name: 'Dr. N. Goutham Rao',
@@ -761,7 +765,8 @@ const About: React.FC = () => {
 
                 <ArrowRight
                   size={16}
-                  className="text-sky-500"
+                  className="text-sky-500 cursor-pointer"
+                  onClick={() => navigate('/Contact')}
                 />
               </div>
 
