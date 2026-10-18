@@ -198,7 +198,7 @@ const Home: React.FC = () => {
                   leading-tight
                 "
               >
-                Next-Generation Machine learning and
+                Next Generation Machine learning and
                 Reconfigurable intelligence
               </h2>
 

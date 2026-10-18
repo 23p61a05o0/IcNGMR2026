@@ -362,7 +362,7 @@ const Navbar: React.FC = () => {
                     mt-1
                   "
                 >
-                  “Next-Generation Machine learning and Reconfigurable intelligence”
+                  “Next Generation Machine learning and Reconfigurable intelligence”
                 </p>
               </div>
             </div>
