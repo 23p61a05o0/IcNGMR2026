@@ -516,7 +516,7 @@ const Home: React.FC = () => {
                 "
               >
                 <span className="font-bold text-slate-900">
-                  The International Conference on Next-Generation
+                  The International Conference on Next Generation
                   Machine Learning and Reconfigurable Intelligence
                   (ICNGMR 2026)
                 </span>{' '}

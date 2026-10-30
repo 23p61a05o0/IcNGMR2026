@@ -69,7 +69,7 @@ const organizingCommittee: Member[] = [
   { name: 'Dr. N. Swapna', title: 'Associate Professor, Dept. of C.S.E.' + AFFILIATION },
   { name: 'Dr. B. Naresh Kumar', title: 'Associate Professor, Dept. of C.S.E.' + AFFILIATION },
 
-  { name: 'Dr. Arun Ganji', title: 'Associate Professor, Dept. of C.S.E.' + AFFILIATION },
+  // { name: 'Dr. Arun Ganji', title: 'Associate Professor, Dept. of C.S.E.' + AFFILIATION },
 
   { name: 'Dr. M. Kalpana', title: 'Associate Professor, Dept. of C.S.E.' + AFFILIATION },
   { name: 'Dr. P. Yamini Devi', title: 'Associate Professor, Dept. of C.S.E.' + AFFILIATION },
@@ -94,7 +94,7 @@ const steeringCommittee: Member[] = [
   { name: 'Dr. P. Kishore Kumar', title: 'HoD – M.E.' + AFFILIATION },
   { name: 'Dr. U. Ramakrishna', title: 'HoD – C.E.' + AFFILIATION },
   { name: 'Dr. P. Kalyani', title: 'HoD – FME' + AFFILIATION },
-  { name: 'Mr. K. Naresh Kumar', title: 'Director, IQAC, VBIT' },
+  { name: 'Mr. K. Naresh Kumar', title: 'Coordinator, IQAC, VBIT' },
 
 ];
 
@@ -177,7 +177,7 @@ const Committee = () => (
 
       <CommitteeSection title="Chief Patrons" members={chiefPatrons} icon={<ShieldCheck className="h-4 w-4 sm:h-5 sm:w-5" />} />
       <CommitteeSection title="Patrons" members={patrons} icon={<Star className="h-4 w-4 sm:h-5 sm:w-5" />} />
-      <CommitteeSection title="Convenor" members={conferenceChair} icon={<User className="h-4 w-4 sm:h-5 sm:w-5" />} />
+      <CommitteeSection title="Conference Chair" members={conferenceChair} icon={<User className="h-4 w-4 sm:h-5 sm:w-5" />} />
       {/* <CommitteeSection title="Co-Convenor" members={CoConvenor} icon={<ShieldCheck className="h-4 w-4 sm:h-5 sm:w-5" />} /> */}
       <CommitteeSection title="International Advisory Committee" members={internationalAdvisory} icon={<Globe className="h-4 w-4 sm:h-5 sm:w-5" />} />
       <CommitteeSection title="National Advisory Committee" members={nationalAdvisory} icon={<Award className="h-4 w-4 sm:h-5 sm:w-5" />} />

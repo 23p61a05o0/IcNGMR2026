@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
             </div>
 
             <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
-              International Conference on Next-Generation Machine learning
+              International Conference on Next Generation Machine learning
               and Reconfigurable intelligence
             </p>
 
