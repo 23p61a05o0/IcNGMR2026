@@ -102,22 +102,9 @@ const Navbar: React.FC = () => {
         to={to}
         onClick={onClick}
         className={`
-          isolate
-          flex
-          items-center
-          justify-center
-          whitespace-nowrap
-          h-9
-          text-[10px]
-          lg:text-xs
-          font-black
-          tracking-wide
-          px-2
-          lg:px-2.5
-          rounded-xl
-          transition-colors
-          duration-300
-          ease-out
+          isolate flex items-center justify-center whitespace-nowrap
+          h-9 text-[10px] lg:text-xs font-black tracking-wide
+          px-2 lg:px-2.5 rounded-xl transition-colors duration-300 ease-out
           ${isActive
             ? 'bg-gradient-to-br from-white to-sky-50 text-slate-900 shadow-lg border-b-2 border-sky-300'
             : 'text-white hover:bg-white/20 hover:backdrop-blur-md'
@@ -126,10 +113,7 @@ const Navbar: React.FC = () => {
       >
         <Icon
           className={`
-            h-4
-            w-4
-            mr-2
-            flex-shrink-0
+            h-4 w-4 mr-2 flex-shrink-0
             ${isActive ? 'text-sky-500' : 'text-white'}
           `}
         />
@@ -139,32 +123,63 @@ const Navbar: React.FC = () => {
   };
 
   // Ethics dropdown items
-  // Acknowledgment has been removed from this list.
   const ethicsItems = [
-    {
-      name: 'Author Guidelines',
-      path: '/author-guidelines',
-    },
-    {
-      name: 'Editor Guidelines',
-      path: '/editor-guidelines',
-    },
-    {
-      name: 'Reviewer Guidelines',
-      path: '/reviewer-guidelines',
-    },
-    {
-      name: 'Review Process',
-      path: '/review-process',
-    },
+    { name: 'Author Guidelines', path: '/author-guidelines' },
+    { name: 'Editor Guidelines', path: '/editor-guidelines' },
+    { name: 'Reviewer Guidelines', path: '/reviewer-guidelines' },
+    { name: 'Review Process', path: '/review-process' },
   ];
 
   const isEthicsActive =
     location.pathname.includes('guidelines') ||
     location.pathname === '/review-process';
 
+  // Announcement text
+  const announcement =
+    'PAPER SUBMISSION DEADLINE EXTENDED! SUBMIT YOUR RESEARCH PAPER BY 30TH NOVEMBER 2026.';
+
   return (
     <>
+      {/* =====================================================
+          ANNOUNCEMENT TICKER STYLES
+      ====================================================== */}
+
+      <style>
+        {`
+          @keyframes announcement-marquee {
+            from {
+              transform: translateX(0);
+            }
+            to {
+              transform: translateX(-50%);
+            }
+          }
+
+          .announcement-track {
+            display: flex;
+            width: max-content;
+            animation: announcement-marquee 13s linear infinite;
+            will-change: transform;
+          }
+
+          .announcement-track:hover {
+            animation-play-state: paused;
+          }
+
+          .announcement-item {
+            flex-shrink: 0;
+            white-space: nowrap;
+            padding-right: 4rem;
+          }
+
+          @media (prefers-reduced-motion: reduce) {
+            .announcement-track {
+              animation: none;
+            }
+          }
+        `}
+      </style>
+
       {/* =====================================================
           1. TOP CONTACT BAR
       ====================================================== */}
@@ -188,17 +203,13 @@ const Navbar: React.FC = () => {
       >
         <div
           className="
-            max-w-7xl
-            mx-auto
-            flex
-            justify-between
-            items-center
-            px-4
-            sm:px-6
+            max-w-7xl mx-auto flex justify-between items-center
+            gap-2 px-4 sm:px-6
           "
         >
           {/* Contact Information */}
-          <div className="flex items-center space-x-3 sm:space-x-6">
+          <div className="flex items-center space-x-3 sm:space-x-6 flex-shrink-0">
+
             {/* Phone */}
             <a
               href="tel:+919246411464"
@@ -220,9 +231,61 @@ const Navbar: React.FC = () => {
             </a>
           </div>
 
+          {/* =====================================================
+              CONTINUOUS PAPER SUBMISSION ANNOUNCEMENT
+          ====================================================== */}
+
+          <Link
+            to="/registration"
+            aria-label="Paper submission deadline extended to 30th November 2026. Go to registration."
+            className="
+              flex-1 min-w-0 mx-2 sm:mx-5
+              overflow-hidden cursor-pointer
+              announcement-container
+            "
+          >
+            <div className="overflow-hidden w-full">
+              <div className="announcement-track">
+
+                {/* First copy */}
+                <span
+                  className="
+                    announcement-item
+                    text-yellow-300
+                    font-black
+                    tracking-wider
+                    text-[9px]
+                    sm:text-[11px]
+                    uppercase
+                  "
+                >
+                  {announcement}
+                </span>
+
+                {/* Duplicate copy for seamless scrolling */}
+                <span
+                  className="
+                    announcement-item
+                    text-yellow-300
+                    font-black
+                    tracking-wider
+                    text-[9px]
+                    sm:text-[11px]
+                    uppercase
+                  "
+                  aria-hidden="true"
+                >
+                  {announcement}
+                </span>
+
+              </div>
+            </div>
+          </Link>
+
           {/* Social Links */}
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-3 flex-shrink-0">
             <div className="flex items-center space-x-2 sm:space-x-3 border-l border-white/20 pl-3">
+
               <a
                 href="https://www.instagram.com/icngmr2026/"
                 target="_blank"
@@ -252,6 +315,7 @@ const Navbar: React.FC = () => {
               >
                 <XLogo className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </a>
+
             </div>
           </div>
         </div>
@@ -275,31 +339,21 @@ const Navbar: React.FC = () => {
       >
         <div
           className="
-            max-w-7xl
-            mx-auto
-            px-4
-            sm:px-6
-            flex
-            flex-col
-            lg:flex-row
-            justify-between
-            items-center
-            gap-4
-            lg:gap-6
+            max-w-7xl mx-auto px-4 sm:px-6
+            flex flex-col lg:flex-row justify-between
+            items-center gap-4 lg:gap-6
           "
         >
           {/* Branding */}
           <div className="flex items-center space-x-3 sm:space-x-5 text-left">
+
             {/* ICNGMR Logo */}
             <img
               src="/icngmr.png"
               alt="ICNGMR Logo"
               className={`
-                w-auto
-                object-contain
-                transition-[height]
-                duration-500
-                ease-out
+                w-auto object-contain transition-[height]
+                duration-500 ease-out
                 ${isScrolled ? 'h-10 sm:h-12' : 'h-14 sm:h-20'}
               `}
             />
@@ -309,11 +363,8 @@ const Navbar: React.FC = () => {
               src="/vbit.jpg"
               alt="VBIT Logo"
               className={`
-                w-auto
-                object-contain
-                transition-[height]
-                duration-500
-                ease-out
+                w-auto object-contain transition-[height]
+                duration-500 ease-out
                 ${isScrolled ? 'h-10 sm:h-12' : 'h-14 sm:h-20'}
               `}
             />
@@ -321,14 +372,9 @@ const Navbar: React.FC = () => {
             <div className="border-l-2 border-sky-100 pl-2.5 sm:pl-5">
               <h1
                 className="
-                  text-[11px]
-                  sm:text-sm
-                  md:text-lg
-                  font-black
-                  text-slate-900
-                  leading-tight
-                  uppercase
-                  tracking-tight
+                  text-[11px] sm:text-sm md:text-lg
+                  font-black text-slate-900 leading-tight
+                  uppercase tracking-tight
                 "
               >
                 Vignana Bharathi Institute of Technology (Autonomous)
@@ -337,14 +383,9 @@ const Navbar: React.FC = () => {
               <div className="mt-0.5 sm:mt-1">
                 <p
                   className="
-                    text-sky-600
-                    font-extrabold
-                    text-[8px]
-                    sm:text-[10px]
-                    md:text-xs
-                    uppercase
-                    tracking-widest
-                    leading-none
+                    text-sky-600 font-extrabold
+                    text-[8px] sm:text-[10px] md:text-xs
+                    uppercase tracking-widest leading-none
                   "
                 >
                   International Conference on
@@ -352,14 +393,9 @@ const Navbar: React.FC = () => {
 
                 <p
                   className="
-                    text-slate-600
-                    font-bold
-                    text-[9px]
-                    sm:text-[11px]
-                    md:text-[13px]
-                    italic
-                    leading-tight
-                    mt-1
+                    text-slate-600 font-bold
+                    text-[9px] sm:text-[11px] md:text-[13px]
+                    italic leading-tight mt-1
                   "
                 >
                   “Next Generation Machine learning and Reconfigurable intelligence”
@@ -371,46 +407,16 @@ const Navbar: React.FC = () => {
           {/* Accreditation Logos */}
           <div
             className={`
-              hidden
-              sm:flex
-              items-center
-              space-x-4
-              md:space-x-8
-              transition-[transform]
-              duration-500
-              ease-out
+              hidden sm:flex items-center space-x-4 md:space-x-8
+              transition-[transform] duration-500 ease-out
               ${isScrolled ? 'scale-75 origin-right' : 'scale-100'}
             `}
           >
-            <img
-              src="/aicte.png"
-              alt="AICTE"
-              className="h-10 sm:h-14 w-auto"
-            />
-
-            <img
-              src="/NBA.png"
-              alt="NBA"
-              className="h-12 sm:h-16 w-auto"
-            />
-
-            <img
-              src="/NAAC.jpeg"
-              alt="NAAC"
-              className="h-10 sm:h-14 w-auto"
-            />
-
-            <img
-              src="/ugc.png"
-              alt="UGC"
-              className="h-10 sm:h-14 w-auto"
-            />
-
-            <img
-              src="/JNTUH.png"
-              alt="JNTUH"
-              className="h-10 sm:h-14 w-auto"
-            />
+            <img src="/aicte.png" alt="AICTE" className="h-10 sm:h-14 w-auto" />
+            <img src="/NBA.png" alt="NBA" className="h-12 sm:h-16 w-auto" />
+            <img src="/NAAC.jpeg" alt="NAAC" className="h-10 sm:h-14 w-auto" />
+            <img src="/ugc.png" alt="UGC" className="h-10 sm:h-14 w-auto" />
+            <img src="/JNTUH.png" alt="JNTUH" className="h-10 sm:h-14 w-auto" />
           </div>
         </div>
       </div>
@@ -421,12 +427,9 @@ const Navbar: React.FC = () => {
 
       <nav
         className={`
-          sticky
-          top-0
-          z-[100]
+          sticky top-0 z-[100]
           transition-[background-color,box-shadow,padding]
-          duration-500
-          ease-out
+          duration-500 ease-out
           ${isScrolled
             ? 'bg-sky-500/95 backdrop-blur-md shadow-2xl py-2'
             : 'bg-sky-500 py-3'
@@ -435,8 +438,10 @@ const Navbar: React.FC = () => {
       >
         <div className="max-w-[98%] mx-auto px-4">
           <div className="flex justify-center items-center">
+
             {/* DESKTOP NAVIGATION */}
             <div className="hidden xl:flex items-center justify-center gap-x-2">
+
               <NavLink to="/" icon={Home}>
                 Home
               </NavLink>
@@ -462,23 +467,11 @@ const Navbar: React.FC = () => {
                 href="/#important-dates"
                 onClick={handleImportantDatesClick}
                 className="
-                  isolate
-                  flex
-                  items-center
-                  justify-center
-                  whitespace-nowrap
-                  h-9
-                  text-[10px]
-                  lg:text-xs
-                  font-black
-                  text-white
-                  px-2
-                  lg:px-2.5
-                  rounded-xl
-                  transition-colors
-                  duration-300
-                  ease-out
-                  hover:bg-white/20
+                  isolate flex items-center justify-center
+                  whitespace-nowrap h-9 text-[10px] lg:text-xs
+                  font-black text-white px-2 lg:px-2.5
+                  rounded-xl transition-colors duration-300
+                  ease-out hover:bg-white/20
                 "
               >
                 <Calendar className="h-4 w-4 mr-2 flex-shrink-0" />
@@ -498,21 +491,10 @@ const Navbar: React.FC = () => {
                     setIsEthicsOpen((previous) => !previous)
                   }
                   className={`
-                    isolate
-                    flex
-                    items-center
-                    justify-center
-                    whitespace-nowrap
-                    h-9
-                    text-[10px]
-                    lg:text-xs
-                    font-black
-                    px-2
-                    lg:px-2.5
-                    rounded-xl
-                    transition-colors
-                    duration-300
-                    ease-out
+                    isolate flex items-center justify-center
+                    whitespace-nowrap h-9 text-[10px] lg:text-xs
+                    font-black px-2 lg:px-2.5 rounded-xl
+                    transition-colors duration-300 ease-out
                     ${isEthicsActive
                       ? 'bg-gradient-to-br from-white to-sky-50 text-slate-900 shadow-lg border-b-2 border-sky-300'
                       : 'text-white hover:bg-white/20'
@@ -521,10 +503,7 @@ const Navbar: React.FC = () => {
                 >
                   <Scale
                     className={`
-                      h-4
-                      w-4
-                      mr-2
-                      flex-shrink-0
+                      h-4 w-4 mr-2 flex-shrink-0
                       ${isEthicsActive ? 'text-sky-500' : 'text-white'}
                     `}
                   />
@@ -533,13 +512,8 @@ const Navbar: React.FC = () => {
 
                   <ChevronDown
                     className={`
-                      ml-1
-                      h-3
-                      w-3
-                      flex-shrink-0
-                      transition-transform
-                      duration-300
-                      ease-out
+                      ml-1 h-3 w-3 flex-shrink-0
+                      transition-transform duration-300 ease-out
                       ${isEthicsOpen ? 'rotate-180' : ''}
                     `}
                   />
@@ -551,20 +525,11 @@ const Navbar: React.FC = () => {
                 {/* Dropdown */}
                 <div
                   className={`
-                    absolute
-                    top-[calc(100%+8px)]
-                    left-0
-                    w-52
-                    bg-white
-                    rounded-2xl
-                    shadow-2xl
-                    py-3
-                    border
-                    border-slate-100
-                    transition-[opacity,transform]
-                    duration-300
-                    ease-out
-                    origin-top
+                    absolute top-[calc(100%+8px)] left-0 w-52
+                    bg-white rounded-2xl shadow-2xl py-3
+                    border border-slate-100
+                    transition-[opacity,transform] duration-300
+                    ease-out origin-top
                     ${isEthicsOpen
                       ? 'opacity-100 scale-100 translate-y-0'
                       : 'opacity-0 scale-95 -translate-y-4 pointer-events-none'
@@ -576,17 +541,10 @@ const Navbar: React.FC = () => {
                       key={item.name}
                       to={item.path}
                       className="
-                        flex
-                        items-center
-                        px-5
-                        py-3
-                        text-sm
-                        text-slate-700
-                        hover:bg-sky-50
-                        hover:text-sky-600
-                        font-bold
-                        transition-colors
-                        duration-200
+                        flex items-center px-5 py-3 text-sm
+                        text-slate-700 hover:bg-sky-50
+                        hover:text-sky-600 font-bold
+                        transition-colors duration-200
                       "
                       onClick={() => setIsEthicsOpen(false)}
                     >
@@ -600,7 +558,6 @@ const Navbar: React.FC = () => {
                 Registration
               </NavLink>
 
-              {/* Standalone Acknowledgement button */}
               <NavLink to="/acknowledgment" icon={Award}>
                 Acknowledgement
               </NavLink>
@@ -608,18 +565,17 @@ const Navbar: React.FC = () => {
               <NavLink to="/contact" icon={Phone}>
                 Contact
               </NavLink>
+
             </div>
 
             {/* MOBILE / TABLET HEADER */}
             <div className="xl:hidden flex justify-between w-full items-center">
+
               <div className="flex flex-col">
                 <span
                   className="
-                    text-white
-                    font-black
-                    text-base
-                    leading-none
-                    tracking-tight
+                    text-white font-black text-base
+                    leading-none tracking-tight
                   "
                 >
                   ICNGMR 2026
@@ -627,12 +583,8 @@ const Navbar: React.FC = () => {
 
                 <span
                   className="
-                    text-sky-100
-                    text-[10px]
-                    font-bold
-                    uppercase
-                    tracking-widest
-                    mt-1
+                    text-sky-100 text-[10px] font-bold
+                    uppercase tracking-widest mt-1
                   "
                 >
                   International Conference
@@ -652,14 +604,9 @@ const Navbar: React.FC = () => {
                   setIsMobileMenuOpen((previous) => !previous)
                 }
                 className="
-                  text-white
-                  p-2.5
-                  bg-white/10
-                  rounded-xl
-                  active:scale-90
-                  transition-transform
-                  duration-200
-                  shadow-inner
+                  text-white p-2.5 bg-white/10 rounded-xl
+                  active:scale-90 transition-transform
+                  duration-200 shadow-inner
                 "
               >
                 {isMobileMenuOpen ? (
@@ -678,13 +625,9 @@ const Navbar: React.FC = () => {
 
         <div
           className={`
-            xl:hidden
-            overflow-y-auto
-            transition-[max-height,opacity]
-            duration-500
-            ease-out
-            bg-sky-600
-            border-white/10
+            xl:hidden overflow-y-auto
+            transition-[max-height,opacity] duration-500
+            ease-out bg-sky-600 border-white/10
             ${isMobileMenuOpen
               ? 'max-h-[calc(100vh-80px)] opacity-100 border-t'
               : 'max-h-0 opacity-0 pointer-events-none'
@@ -692,6 +635,7 @@ const Navbar: React.FC = () => {
           `}
         >
           <div className="p-6 space-y-2">
+
             {/* Home */}
             <Link
               to="/"
@@ -795,11 +739,7 @@ const Navbar: React.FC = () => {
               </button>
 
               {isMobileEthicsOpen && (
-                <div
-                  className="
-                    ml-9 space-y-1 bg-white/5 rounded-xl p-2
-                  "
-                >
+                <div className="ml-9 space-y-1 bg-white/5 rounded-xl p-2">
                   {ethicsItems.map((item) => (
                     <Link
                       key={item.name}
@@ -869,6 +809,7 @@ const Navbar: React.FC = () => {
                 Register Now
               </Link>
             </div>
+
           </div>
         </div>
       </nav>

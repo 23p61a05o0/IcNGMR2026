@@ -177,7 +177,7 @@ const ContactAndAwards: React.FC = () => {
                                                     Deadline
                                                 </p>
                                                 <p className="text-sm sm:text-base font-bold">
-                                                    15th November, 2026
+                                                    30th November, 2026
                                                 </p>
                                             </div>
                                         </div>

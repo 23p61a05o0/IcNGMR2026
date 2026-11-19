@@ -26,7 +26,7 @@ const ConferenceTimeline = () => {
     },
     {
       title: "Submission Closes",
-      date: "15th November 2026",
+      date: "30th November 2026",
       icon: FileText,
       color: "from-indigo-500 to-indigo-600",
       bgColor: "bg-indigo-50",
@@ -35,7 +35,7 @@ const ConferenceTimeline = () => {
     },
     {
       title: "Acceptance Notification",
-      date: "25th November 2026",
+      date: "05th December 2026",
       icon: Bell,
       color: "from-green-500 to-green-600",
       bgColor: "bg-green-50",
@@ -44,7 +44,7 @@ const ConferenceTimeline = () => {
     },
     {
       title: "Final Camera Ready Paper",
-      date: "30th November 2026",
+      date: "10th December 2026",
       icon: FileText,
       color: "from-teal-500 to-teal-600",
       bgColor: "bg-teal-50",
@@ -53,7 +53,7 @@ const ConferenceTimeline = () => {
     },
     {
       title: "Final Registration Deadline",
-      date: "05th December 2026",
+      date: "10th December 2026",
       icon: UserPlus,
       color: "from-orange-500 to-orange-600",
       bgColor: "bg-orange-50",

@@ -121,10 +121,10 @@ const Registration: React.FC = () => {
                   <tbody>
                     {[
                       { event: 'Paper Submission Open', date: 'Live Now', highlight: true },
-                      { event: 'Submission Closes', date: '15th November 2026', highlight: true },
-                      { event: 'Acceptance Notification', date: '25th November 2026', highlight: true },
-                      { event: 'Final Camera-Ready Paper', date: '30th November 2026', highlight: true },
-                      { event: 'Final Registration Deadline', date: '05th December 2026', highlight: true },
+                      { event: 'Submission Closes', date: '30th November 2026', highlight: true },
+                      { event: 'Acceptance Notification', date: '05th December 2026', highlight: true },
+                      { event: 'Final Camera-Ready Paper', date: '10th December 2026', highlight: true },
+                      { event: 'Final Registration Deadline', date: '10th December 2026', highlight: true },
                       { event: 'Conference Dates', date: '28th to 29th December 2026', highlight: true },
                     ].map((row, idx) => (
                       <tr

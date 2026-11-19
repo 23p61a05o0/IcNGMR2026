@@ -42,7 +42,7 @@ export default function TabbedInterface() {
     },
     {
       event: "Submission Closes",
-      date: "15th November 2026",
+      date: "30th November 2026",
       icon: AlertCircle,
       color: "text-rose-600",
       bg: "bg-rose-100",
@@ -50,7 +50,7 @@ export default function TabbedInterface() {
     },
     {
       event: "Acceptance Notification",
-      date: "25th November 2026",
+      date: "05th December 2026",
       icon: MailCheck,
       color: "text-amber-600",
       bg: "bg-amber-100",
@@ -58,7 +58,7 @@ export default function TabbedInterface() {
     },
     {
       event: "Final Camera Ready Paper",
-      date: "30th November 2026",
+      date: "10th December 2026",
       icon: Zap,
       color: "text-indigo-600",
       bg: "bg-indigo-100",
@@ -66,7 +66,7 @@ export default function TabbedInterface() {
     },
     {
       event: "Final Registration Deadline",
-      date: "05th December 2026",
+      date: "10th December 2026",
       icon: History,
       color: "text-purple-600",
       bg: "bg-purple-100",
