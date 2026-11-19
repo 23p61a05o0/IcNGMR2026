@@ -323,7 +323,7 @@ const Footer: React.FC = () => {
           </ScrollReveal>
 
           {/* =====================================================
-              Column 5: Indexing Partner
+              Column 5: Indexing Partners
           ====================================================== */}
           <ScrollReveal
             variant="3d"
@@ -332,12 +332,12 @@ const Footer: React.FC = () => {
             className="space-y-4"
           >
             <h3 className="text-lg font-bold">
-              Indexing Partner
+              Indexing Partners
             </h3>
 
             <img
               src="webOfS.png"
-              alt="Indexing Partner "
+              alt="Web of Science"
               className="
               h-16 
               w-auto 
@@ -352,7 +352,7 @@ const Footer: React.FC = () => {
             />
             <img
               src="clarivate.png"
-              alt="Indexing Partner 2"
+              alt="Clarivate"
               className="
                 h-16 
                 w-auto 

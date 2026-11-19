@@ -1,5 +1,5 @@
 import React from 'react';
-import { User, Users, ShieldCheck, Globe, Star, Mic2, ClipboardCheck, Coffee, Award } from 'lucide-react';
+import { User, Users, ShieldCheck, Globe, Star, ClipboardCheck, Coffee, Award } from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
 
 interface Member {

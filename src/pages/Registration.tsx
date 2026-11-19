@@ -50,7 +50,7 @@ const Registration: React.FC = () => {
                   </strong>
                   The maximum allowed pages are 5 (extra pages at ₹1000/page).
                   Plagiarism must be <strong>less than 10%</strong>. Accepted papers
-                  will be submitted for Scopus indexing.
+                  will be submitted for Web of Science indexing.
                 </p>
               </div>
             </div>
