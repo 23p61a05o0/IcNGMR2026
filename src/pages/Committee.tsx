@@ -10,7 +10,7 @@ interface Member {
 const AFFILIATION = ", VBIT";
 
 const chiefPatrons: Member[] = [
-  { name: 'Dr. N. Gowtham Rao', title: 'Chairman' + AFFILIATION },
+  { name: 'Dr. N. Goutham Rao', title: 'Chairman' + AFFILIATION },
   { name: 'Dr. G. Manohar Reddy', title: 'Secretary' + AFFILIATION },
 ];
 
@@ -64,7 +64,7 @@ const nationalAdvisory: Member[] = [
 
 const organizingCommittee: Member[] = [
   { name: 'Dr. M. Venkateswara Rao', title: 'Professor, Dept. of C.S.E.' + AFFILIATION },
-  { name: 'Dr. A.L. Srinivasulu', title: 'Professor, Dept. of C.S.E.' + AFFILIATION },
+  { name: 'Dr. A.L. Sreenivasulu', title: 'Professor, Dept. of C.S.E.' + AFFILIATION },
   { name: 'Dr. P. Subhadra', title: 'Associate Professor, Dept. of C.S.E.' + AFFILIATION },
   { name: 'Dr. N. Swapna', title: 'Associate Professor, Dept. of C.S.E.' + AFFILIATION },
   { name: 'Dr. B. Naresh Kumar', title: 'Associate Professor, Dept. of C.S.E.' + AFFILIATION },
@@ -80,16 +80,16 @@ const steeringCommittee: Member[] = [
 
   { name: 'Dr. N. Srinivas', title: 'Associate Professor, Dept. of C.S.E.' + AFFILIATION },
   { name: 'Dr. S. Pothalaiah', title: 'Dean, Academic & Planning, Professor, E.C.E.' + AFFILIATION },
-  { name: 'Dr. Sundeep Siddula', title: 'Associate Dean, R&D, Dept. of EEE' + AFFILIATION },
-  { name: 'Dr. N. Sathyanarayan', title: 'Rtd. Senior Scientist, BARC, Professor of Physics' + AFFILIATION },
-  { name: 'Dr. C. Ramaseshagiri Rao', title: 'Professor, Dept. of C.S.E.' + AFFILIATION },
-  { name: 'Dr. P. Sathish Kumar', title: 'Professor, Dept. of M.E.' + AFFILIATION },
+  { name: 'Dr. S. Sundeep ', title: 'Associate Dean, R&D, Dept. of EEE' + AFFILIATION },
+  { name: 'Dr. N. Satyanarayana', title: 'Rtd. Senior Scientist, BARC, Professor of Physics' + AFFILIATION },
+  // { name: 'Dr. C. Ramaseshagiri Rao', title: 'Professor, Dept. of C.S.E.' + AFFILIATION },
+  { name: 'Dr. B. Satish Kumar', title: 'Professor, Dept. of M.E.' + AFFILIATION },
   { name: 'Dr. V. Sridhar Reddy', title: 'HoD – I.T' + AFFILIATION },
   { name: 'Dr. Y. Raju', title: 'HoD – C.S.E. (DS)' + AFFILIATION },
-  { name: 'Dr. K. Sireesha', title: 'HoD – C.S.E. (A.I. & M.L.)' + AFFILIATION },
+  { name: 'Dr. K. Shirisha', title: 'HoD – C.S.E. (A.I. & M.L.)' + AFFILIATION },
   { name: 'Dr. P. Sushma', title: 'HoD – C.S.E. (Cyber Security)' + AFFILIATION },
   { name: 'Dr. G. Swamy', title: 'HoD – C.S.B.S.' + AFFILIATION },
-  { name: 'Dr. U. Poornalakshmi', title: 'HoD – E.C.E.' + AFFILIATION },
+  { name: 'Dr. Y. Poorna Lakshmi', title: 'HoD – E.C.E.' + AFFILIATION },
   { name: 'Dr. K. Neelima', title: 'HoD – E.E.E.' + AFFILIATION },
   { name: 'Dr. P. Kishore Kumar', title: 'HoD – M.E.' + AFFILIATION },
   { name: 'Dr. U. Ramakrishna', title: 'HoD – C.E.' + AFFILIATION },
